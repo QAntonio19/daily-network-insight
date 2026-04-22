@@ -4,7 +4,10 @@ import { Container } from "@/components/ui/Container";
 
 export function HomeHero() {
   return (
-    <section className="hero-editorial relative overflow-hidden">
+    <section
+      id="top"
+      className="hero-editorial relative scroll-mt-20 overflow-hidden sm:scroll-mt-24"
+    >
       <div className="pointer-events-none absolute inset-0 opacity-90">
         <div className="hero-blob-a animate-float-slow absolute -left-24 top-8 h-80 w-80 rounded-full" />
         <div className="hero-blob-b absolute right-[-5%] top-24 h-[28rem] w-[28rem] rounded-full opacity-80" />

@@ -55,6 +55,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Home FAQ — colapsada por defecto; [data-state=open] al expandir (hover desktop / tap móvil) */
+.home-faq-answer-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s var(--ease-out-editorial);
+}
+
+.home-faq-answer-grid[data-state="open"] {
+  grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-faq-answer-grid {
+    transition-duration: 0.01ms;
+  }
+}
+
 /* Atmospheric mesh + paper grain (fixed, non-interactive) */
 body {
   background-color: var(--background);
@@ -353,6 +370,92 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   .btn-primary-shine::after {
     display: none;
+  }
+}
+
+/* Header text links — píldora al hover (lenguaje Contact) + brillo, animación in/out */
+.header-nav-pill {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  color: var(--muted);
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  transform: scale(1);
+  transition:
+    color 0.22s ease-out,
+    background-color 0.22s ease-out,
+    box-shadow 0.22s ease-out,
+    border-color 0.22s ease-out,
+    transform 0.22s ease-out;
+}
+
+.header-nav-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -100%;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    color-mix(in oklab, white 22%, transparent) 45%,
+    transparent 80%
+  );
+  transform: skewX(-12deg);
+  transition: left 0.55s var(--ease-out-editorial);
+}
+
+.header-nav-pill:hover::after,
+.header-nav-pill:focus-visible::after {
+  left: 100%;
+}
+
+.header-nav-pill:hover,
+.header-nav-pill:focus-visible {
+  z-index: 0;
+  color: var(--ivory);
+  background-color: var(--navy);
+  border-color: color-mix(in oklab, var(--ivory) 20%, var(--navy));
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  transform: scale(1.02);
+}
+
+.header-nav-pill--stack {
+  width: 100%;
+  border-radius: 0.75rem;
+  justify-content: center;
+}
+
+.header-nav-pill--stack:hover,
+.header-nav-pill--stack:focus-visible {
+  transform: scale(1.01);
+}
+
+.header-nav-pill--menu {
+  border-radius: 0.5rem;
+}
+
+.header-nav-pill--menu:hover,
+.header-nav-pill--menu:focus-visible {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header-nav-pill,
+  .header-nav-pill::after {
+    transition-duration: 0.01ms;
+  }
+
+  .header-nav-pill::after {
+    display: none;
+  }
+
+  .header-nav-pill:hover,
+  .header-nav-pill:focus-visible {
+    transform: none;
   }
 }
 

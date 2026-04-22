@@ -1,6 +1,5 @@
 import type {
   BenefitCard,
-  EditorialIntroBlock,
   InsightPost,
   NavItem,
   ProjectCard,
@@ -21,8 +20,8 @@ export const siteConfig = {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About us", href: "/about" },
-  { label: "Values", href: "/values" },
+  { label: "About us", href: "/#about-us" },
+  { label: "Values", href: "/#values" },
   {
     label: "Insights",
     href: "/insights",
@@ -40,6 +39,7 @@ export const navItems: NavItem[] = [
     ],
   },
   { label: "Blog", href: "/blog" },
+  { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -206,34 +206,14 @@ export const projectCards: ProjectCard[] = [
   },
 ];
 
-export const aboutNarrative: {
-  founder: EditorialIntroBlock;
-  companyFoundation: EditorialIntroBlock;
-} = {
-  founder: {
-    eyebrow: "About me",
-    title: "I build media where expert knowledge can land without the noise",
-    description:
-      "I started Daily Network Insights to close the gap between what experts know and what readers can use—without watering down the depth. My work is shaped by ongoing conversations with founders, operators, educators, and leaders who operate in the real world and care about craft. I turn those signal-rich exchanges into long-form insight, audio, and formats people can return to when they are ready to act.",
-  },
-  companyFoundation: {
-    eyebrow: "The company’s foundation",
-    title: "Editorial first—grounded in research, interviews, and lived experience",
-    description:
-      "Daily Network Insights exists to shorten the distance between complex industry information and clear, intentional understanding. We are a media platform by design: not a job board, a school outreach program, or a generic career site. The foundation is a consistent publishing practice—credible sources, careful editing, and community-centered programming—so your audience can stay informed, confident, and connected as the landscape changes.",
-  },
-};
-
 export const founder = {
-  name: "Founder & Editorial Lead",
-  role: "Daily Network Insights",
+  name: "Alberto Rodriguez",
+  role: "Founder",
   bio: [
-    "I started Daily Network Insights to close the gap between expert knowledge and everyday understanding—without sacrificing depth. Our work is built on conversations with people who operate in the real world: founders, operators, educators, and leaders who care about craft.",
-    "If you’re building something worth explaining—or you want your brand to show up with clarity and credibility—I’d love to explore what we can create together.",
+    "I’m an entrepreneur with a passion for connecting people, building businesses, and creating opportunities for growth. When I’m not working on new projects, I enjoy exploring events, meeting inspiring leaders, and finding ways to bring fresh ideas to life.",
   ],
-  portraitSrc:
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80",
-  portraitAlt: "Portrait of the founder in professional attire",
+  portraitSrc: "/images/image.png",
+  portraitAlt: "Alberto Rodriguez — professional portrait",
 };
 
 export const galleryItems = [

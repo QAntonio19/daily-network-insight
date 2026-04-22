@@ -1,36 +1,49 @@
 import Image from "next/image";
 import Link from "next/link";
+import { founder } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { founder } from "@/lib/content";
 
-export function HomeFounder() {
+/**
+ * Bloque principal “About” en home (ancla #about-us): diseño “About the founder”
+ * —imagen + cita flotante + copy + CTA.
+ */
+export function HomeAboutUs() {
   return (
-    <section className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-20 sm:py-24">
-      <Container>
+    <section
+      id="about-us"
+      className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
+      aria-label="About us"
+    >
+      <Container className="reveal-on-scroll py-16 sm:py-20">
         <SectionHeading eyebrow="Leadership" title="About the founder" />
-        <div className="mt-12 grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <div className="relative mx-auto w-full max-w-md">
+        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+          <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="editorial-frame">
-              <div className="editorial-frame__inner relative aspect-[3/4]">
+              <div className="editorial-frame__inner relative aspect-[3/4] overflow-hidden">
                 <Image
                   src={founder.portraitSrc}
                   alt={founder.portraitAlt}
                   fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 400px, 90vw"
+                  className="!top-[41px] !bottom-0 !left-0 !right-0 !h-[calc(100%-41px)] w-full object-cover object-[center_22%] scale-[1.18]"
+                  sizes="(min-width: 1024px) 50vw, 90vw"
+                  priority
                 />
               </div>
             </div>
-            <div className="premium-surface absolute -bottom-6 -right-4 hidden max-w-[240px] p-4 text-sm text-stone-700 shadow-lg md:block">
+            <div
+              className="premium-surface mt-4 max-w-[240px] p-4 text-sm leading-relaxed text-stone-700 shadow-lg sm:max-w-[260px] md:absolute md:bottom-[-1.25rem] md:right-[-0.5rem] md:mt-0 lg:bottom-[-1.5rem] lg:right-[-1rem]"
+            >
               Warm, credible, and relentlessly clear.
             </div>
           </div>
-          <div>
+          <div className="min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
               {founder.role}
             </p>
-            <h3 className="mt-3 font-serif text-4xl text-navy">{founder.name}</h3>
+            <h3 className="mt-3 font-serif text-3xl text-navy sm:text-4xl">
+              {founder.name}
+            </h3>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-stone-600">
               {founder.bio.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>

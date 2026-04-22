@@ -31,7 +31,7 @@ export function HomeContentPillars() {
       <Container>
         <SectionHeading
           eyebrow="Content Ecosystem"
-          title="How we show up—consistently"
+          title="How we show up consistently"
           description="A connected system of media and experiences designed to inform, elevate, and connect."
           align="center"
           invert
