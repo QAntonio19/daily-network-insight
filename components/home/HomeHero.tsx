@@ -22,13 +22,13 @@ export function HomeHero() {
             Where media, insight, and opportunity come together
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-stone-600">
-            Daily Network Insights is a media-driven platform dedicated to delivering
-            research-based, industry-informed insights in a way that is accessible,
+            Daily Network Insights is a media driven platform dedicated to delivering
+            research based, industry informed insights in a way that is accessible,
             relevant, and consistent.
           </p>
           <div className="animate-fade-up delay-300 mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <ButtonLink href="/insights">Explore Insights</ButtonLink>
-            <ButtonLink href="/newsletter" variant="secondary">
+            <ButtonLink href="/#newsletter" variant="secondary">
               Join the Newsletter
             </ButtonLink>
             <ButtonLink href="/contact" variant="secondary">

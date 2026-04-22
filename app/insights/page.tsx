@@ -4,7 +4,7 @@ import { EditorialInsightsSection } from "@/components/insights/EditorialInsight
 export const metadata: Metadata = {
   title: "Insights",
   description:
-    "Research-informed perspectives—filter by category or explore the featured story and latest pieces from the editorial desk.",
+    "Research informed perspectives: filter by category or explore the featured story and latest pieces from the editorial desk.",
 };
 
 export default function InsightsPage() {

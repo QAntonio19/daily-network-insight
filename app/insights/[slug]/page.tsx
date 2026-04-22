@@ -71,7 +71,7 @@ export default async function InsightArticlePage({ params }: PageProps) {
         <div className="editorial-rule my-10" />
         <div className="max-w-none space-y-6 text-base leading-relaxed text-stone-600">
           <p>
-            This piece is part of Daily Network Insights’ editorial program—built from
+            This piece is part of Daily Network Insights’ editorial program, built from
             practitioner interviews, industry research, and careful synthesis. Our goal is
             simple: make complex ideas legible without diluting what matters.
           </p>
@@ -82,19 +82,19 @@ export default async function InsightArticlePage({ params }: PageProps) {
           </p>
           <p>
             If you’re exploring how this topic applies to your team or brand, start with
-            the questions at the end of your last leadership meeting—then pressure-test your
+            the questions at the end of your last leadership meeting, then pressure test your
             assumptions with the signals around you: customers, operators, and the market’s
             unglamorous realities.
           </p>
           <p>
-            Daily Network Insights will continue publishing on themes like this—always
-            with a media-first lens and a community-centered ethos. Subscribe to the
+            Daily Network Insights will continue publishing on themes like this, always
+            with a media first lens and a community centered ethos. Subscribe to the
             newsletter for the next dispatch, or partner with us if you want your expertise
             represented with editorial rigor.
           </p>
         </div>
         <div className="mt-12 flex flex-wrap gap-3">
-          <ButtonLink href="/newsletter">Join the Newsletter</ButtonLink>
+          <ButtonLink href="/#newsletter">Join the Newsletter</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             Partner With Us
           </ButtonLink>

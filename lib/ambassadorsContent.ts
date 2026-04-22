@@ -28,7 +28,7 @@ export const ambassadors: Ambassador[] = [
     department: "Organization & Diversity",
     name: "Farah Kanchar",
     email: "info@aabchamber.org",
-    phone: "949-287-2465",
+    phone: "949 287 2465",
     imageSrc: "/images/IMG_3358-Picsart-BackgroundRemover.JPG",
     imageAlt: "Farah Kanchar, professional portrait",
     social: {
@@ -42,7 +42,7 @@ export const ambassadors: Ambassador[] = [
     department: "Banking & Lending",
     name: "Yosmal Gutierrez",
     email: "yosmel@geegoals.com",
-    phone: "949-910-5559",
+    phone: "949 910 5559",
     imageSrc: "/images/image_2025-08-30_084133287.png",
     imageAlt: "Yosmal Gutierrez, professional portrait",
     social: {

@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Podcast",
   description:
-    "Conversations with professionals and leaders—tight edits, clear takeaways, zero filler.",
+    "Conversations with professionals and leaders, tight edits, clear takeaways, zero filler.",
 };
 
 const episodes = [
@@ -16,12 +16,12 @@ const episodes = [
     duration: "42 min",
   },
   {
-    title: "Cross-border collaboration without the theater",
+    title: "Cross border collaboration without the theater",
     guest: "Founders · California & Mexico",
     duration: "38 min",
   },
   {
-    title: "Editorial voice vs. corporate voice—finding the line",
+    title: "Editorial voice vs. corporate voice, finding the line",
     guest: "Brand strategist",
     duration: "35 min",
   },
@@ -33,7 +33,7 @@ export default function PodcastPage() {
       <PageHeader
         eyebrow="Podcast"
         title="Podcast conversations that respect your time"
-        description="Candid interviews with professionals and leaders—produced with editorial standards and published with clarity."
+        description="Candid interviews with professionals and leaders, produced with editorial standards and published with clarity."
       />
       <Container className="reveal-on-scroll py-14 sm:py-20">
         <div className="grid gap-6 lg:grid-cols-[1fr_0.9fr]">

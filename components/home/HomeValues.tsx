@@ -15,9 +15,9 @@ const values = [
     icon: "◇",
   },
   {
-    title: "Insight-Driven Growth",
+    title: "Insight Driven Growth",
     body:
-      "We are committed to delivering valuable tips, advice, and resources through media that people can actually use. By curating knowledge from trusted voices and real-world experience, we make it easier for individuals to stay informed, develop new skills, and grow with purpose.",
+      "We are committed to delivering valuable tips, advice, and resources through media that people can actually use. By curating knowledge from trusted voices and real world experience, we make it easier for individuals to stay informed, develop new skills, and grow with purpose.",
     icon: "◆",
   },
   {

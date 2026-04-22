@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       <PageHeader
         eyebrow="Legal"
         title="Privacy policy"
-        description="A concise overview of how we approach data—built for a premium media platform."
+        description="A concise overview of how we approach data, built for a premium media platform."
       />
       <Container narrow className="reveal-on-scroll py-14 sm:py-20">
         <div className="premium-surface space-y-6 p-8 text-sm leading-relaxed text-stone-600 sm:p-10">
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           </p>
           <p>
             <strong className="font-semibold text-navy">Cookies &amp; analytics.</strong>{" "}
-            We may use first-party analytics to understand aggregate usage patterns. You
+            We may use first party analytics to understand aggregate usage patterns. You
             can control cookies through your browser settings.
           </p>
           <p>

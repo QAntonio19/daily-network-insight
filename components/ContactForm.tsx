@@ -65,7 +65,7 @@ export function ContactForm() {
         type="submit"
         className="btn-primary-shine w-full min-h-11 rounded-full bg-navy px-6 py-3 text-sm font-semibold text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-200 hover:bg-navy-soft sm:w-auto"
       >
-        {status === "sent" ? "Thank you—we’ll be in touch" : "Send message"}
+        {status === "sent" ? "Thank you, we’ll be in touch" : "Send message"}
       </button>
     </form>
   );

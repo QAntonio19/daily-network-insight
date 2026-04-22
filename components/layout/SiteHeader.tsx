@@ -169,7 +169,7 @@ export function SiteHeader() {
     <Link
       href="/"
       className="group inline-flex w-fit max-w-none items-center gap-2.5 sm:gap-3 lg:gap-3.5"
-      aria-label={`${siteConfig.name} — home`}
+      aria-label={`${siteConfig.name}, home`}
     >
       <Image
         src="/images/logo-dni.png"

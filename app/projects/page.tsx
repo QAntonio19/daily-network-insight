@@ -7,7 +7,7 @@ import { projectCards } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Projects & Initiatives",
   description:
-    "Cross-border storytelling, community collaborations, educational media, and leadership events.",
+    "Cross border storytelling, community collaborations, educational media, and leadership events.",
 };
 
 export default function ProjectsPage() {
@@ -16,7 +16,7 @@ export default function ProjectsPage() {
       <PageHeader
         eyebrow="Projects"
         title="Initiatives across regions and communities"
-        description="California, Mexico, educational storytelling, cross-border initiatives, media partnerships, and leadership events—built with editorial care."
+        description="California, Mexico, educational storytelling, cross border initiatives, media partnerships, and leadership events, built with editorial care."
       />
       <Container className="reveal-on-scroll py-14 sm:py-20">
         <div className="grid gap-8 md:grid-cols-2">

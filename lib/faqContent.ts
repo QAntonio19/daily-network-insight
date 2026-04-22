@@ -1,21 +1,39 @@
 export const faqItems = [
   {
-    id: "who-is-daily-network",
-    question: "Who is Daily Network",
+    id: "what-is-daily-network-insights",
+    question: "What is Daily Network Insights?",
     answer:
-      "We are an education-driven organization focused on preparing the next generation of entrepreneurs. Our mission is to bridge the gap between academic learning and real-world experience by helping students develop essential skills, gain professional exposure, and connect with meaningful opportunities.",
+      "Daily Network Insights is a media platform dedicated to delivering industry-driven insights, expert perspectives, and curated knowledge. We transform real-world experience into accessible content that informs, educates, and connects individuals across industries.",
   },
   {
-    id: "what-does-daily-network-do",
-    question: "What does Daily Network do",
+    id: "what-does-daily-network-insights-offer",
+    question: "What does Daily Network Insights offer?",
     answer:
-      "We empower students, entrepreneurs, and professionals through mentorship, career resources, and community programs. By collaborating with local organizations and chambers of commerce, we provide access to expert insights, business development tools, and opportunities for professional growth.",
+      "We provide insight-driven content through features, interviews, newsletters, and digital media. Our platform highlights industry trends, practical advice, and valuable resources designed to help individuals and professionals stay informed and continue growing.",
   },
   {
-    id: "internship-opportunities",
-    question: "How do you offer internship opportunities",
+    id: "who-is-your-platform-for",
+    question: "Who is your platform for?",
     answer:
-      "We partner with businesses and organizations to create tailored internship and apprenticeship programs. By matching students with opportunities that align with their studies and goals, we make it easier for them to gain hands-on experience, build strong networks, and prepare for long-term career success.",
+      "Our content is designed for ambitious individuals—students, professionals, entrepreneurs, and curious minds—who are seeking clarity, direction, and real-world insight to support their personal and professional growth.",
+  },
+  {
+    id: "how-can-businesses-partner",
+    question: "How can businesses partner with you?",
+    answer:
+      "We partner with brands through sponsored insights, premium newsletter placements, and event & media collaborations. These opportunities allow businesses to share their expertise, expand their reach, and connect with a targeted, engaged audience.",
+  },
+  {
+    id: "mentorship-or-internship-programs",
+    question: "Do you offer mentorship or internship programs?",
+    answer:
+      "Our primary focus is media and content. While we no longer offer structured internship programs, we create opportunities for learning and connection through insights, conversations, and community-driven experiences.",
+  },
+  {
+    id: "how-stay-connected-or-get-involved",
+    question: "How can I stay connected or get involved?",
+    answer:
+      "You can engage with Daily Network Insights by subscribing to our newsletter, attending community events, or following our content across platforms. We also welcome collaborations with individuals and organizations who share valuable insights.",
   },
 ] as const;
 

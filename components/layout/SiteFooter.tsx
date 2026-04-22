@@ -13,12 +13,12 @@ export function SiteFooter() {
             <p className="mt-4 max-w-md text-sm leading-relaxed text-stone-300">
               {siteConfig.tagline}
             </p>
-            <div className="mt-8">
+            <div id="newsletter" className="mt-8 scroll-mt-28">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
                 Newsletter
               </p>
               <p className="mt-2 text-sm text-stone-300">
-                Weekly insight—curated, credible, and built for busy professionals.
+                Weekly insight, curated, credible, and built for busy professionals.
               </p>
               <div className="mt-4">
                 <NewsletterForm />

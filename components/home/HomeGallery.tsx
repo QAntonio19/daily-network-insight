@@ -10,7 +10,7 @@ export function HomeGallery() {
         <SectionHeading
           eyebrow="Proof"
           title="Media gallery & community moments"
-          description="Interviews, events, networking, speaking, collaborations, and community engagement—captured with editorial restraint."
+          description="Interviews, events, networking, speaking, collaborations, and community engagement, captured with editorial restraint."
         />
         <div className="mt-14 columns-1 gap-5 sm:columns-2 lg:columns-3">
           {galleryItems.map((g) => (

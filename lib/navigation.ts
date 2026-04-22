@@ -2,7 +2,7 @@ import type { HomeNavKey, NavItem } from "./types";
 
 /**
  * A nav item is active for its own path, a child path, or when the pathname is in the item's subtree
- * (e.g. /insights and /insights/some-post) — but not for Home (/).
+ * (e.g. nested insight articles) but not for Home (/).
  * For `/#section`, on `/` the optional `homeNavKey` (scroll) overrides hash when set (after layout).
  * `null` = en home pero fuera de hero y de about (p. ej. bloques de abajo): Home y About inactivos.
  */

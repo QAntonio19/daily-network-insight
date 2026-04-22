@@ -8,7 +8,7 @@ import { insightPosts } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Long-form stories, explainers, and field notes from Daily Network Insights.",
+    "Long form stories, explainers, and field notes from Daily Network Insights.",
 };
 
 export default function BlogPage() {
@@ -21,7 +21,7 @@ export default function BlogPage() {
       <PageHeader
         eyebrow="Blog"
         title="Latest from the network"
-        description="Deeper takes on leadership, industry shifts, and how credible stories get built—new posts on a steady cadence."
+        description="Deeper takes on leadership, industry shifts, and how credible stories get built, with new posts on a steady cadence."
       />
       <Container className="reveal-on-scroll py-14 sm:py-20">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

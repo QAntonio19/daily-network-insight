@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/Container";
 export const metadata: Metadata = {
   title: "Community Events",
   description:
-    "Gatherings designed for conversation—panels, salons, and community moments with follow-through.",
+    "Gatherings designed for conversation, panels, salons, and community moments with follow through.",
 };
 
 const upcoming = [
@@ -16,7 +16,7 @@ const upcoming = [
     date: "2026-05-14",
   },
   {
-    title: "Cross-border media & community storytelling",
+    title: "Cross border media & community storytelling",
     location: "Virtual + Mexico City",
     date: "2026-06-02",
   },
@@ -28,7 +28,7 @@ export default function EventsPage() {
       <PageHeader
         eyebrow="Events"
         title="Community events with intention"
-        description="We host programming that prioritizes dialogue, depth, and follow-up content—so the conversation doesn’t end when the room clears."
+        description="We host programming that prioritizes dialogue, depth, and follow up content, so the conversation doesn’t end when the room clears."
       />
       <Container className="reveal-on-scroll py-14 sm:py-20">
         <div className="grid gap-6 lg:grid-cols-2">
@@ -47,7 +47,7 @@ export default function EventsPage() {
           ))}
         </div>
         <div className="mt-12 flex flex-wrap justify-center gap-3">
-          <ButtonLink href="/newsletter">Get event updates</ButtonLink>
+          <ButtonLink href="/#newsletter">Get event updates</ButtonLink>
           <ButtonLink href="/contact" variant="secondary">
             Propose a partnership event
           </ButtonLink>

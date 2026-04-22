@@ -41,7 +41,7 @@ export function EditorialInsightsSection() {
         <SectionHeading
           eyebrow="Insights"
           title="Latest from the editorial desk"
-          description="Research-informed perspectives—built for clarity, designed for busy readers."
+          description="Research informed perspectives, built for clarity, designed for busy readers."
         />
 
         <div className="mt-8 flex flex-wrap gap-2">
@@ -66,7 +66,7 @@ export function EditorialInsightsSection() {
 
         {filtered.length === 0 ? (
           <p className="mt-10 text-sm text-stone-600">
-            No insights in this category yet—try another filter or view all.
+            No insights in this category yet. Try another filter or view all.
           </p>
         ) : null}
 

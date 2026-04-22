@@ -9,7 +9,7 @@ import type {
 export const siteConfig = {
   name: "Daily Network Insights",
   tagline:
-    "Research-based, industry-informed insights—accessible, relevant, and consistent.",
+    "Research based, industry informed insights, accessible, relevant, and consistent.",
   email: "hello@dailynetworkinsights.com",
   social: {
     linkedin: "https://www.linkedin.com",
@@ -25,10 +25,7 @@ export const navItems: NavItem[] = [
   {
     label: "Insights",
     href: "/insights",
-    children: [
-      { label: "Podcast", href: "/podcast" },
-      { label: "Newsletter", href: "/newsletter" },
-    ],
+    children: [{ label: "Podcast", href: "/podcast" }],
   },
   {
     label: "Services",
@@ -57,7 +54,7 @@ export const insightPosts: InsightPost[] = [
     slug: "leading-with-clarity-in-volatile-markets",
     title: "Leading with Clarity in Volatile Markets",
     excerpt:
-      "How executives translate uncertainty into direction—and what teams need to hear when stakes are high.",
+      "How executives translate uncertainty into direction, and what teams need to hear when stakes are high.",
     category: "Leadership",
     date: "2026-03-12",
     readTime: "8 min read",
@@ -70,7 +67,7 @@ export const insightPosts: InsightPost[] = [
     slug: "the-new-media-stack-for-credible-storytelling",
     title: "The New Media Stack for Credible Storytelling",
     excerpt:
-      "From editorial workflow to distribution—what premium media brands get right in 2026.",
+      "From editorial workflow to distribution, what premium media brands get right in 2026.",
     category: "Media",
     date: "2026-03-08",
     readTime: "6 min read",
@@ -80,9 +77,9 @@ export const insightPosts: InsightPost[] = [
   },
   {
     slug: "cross-border-collaboration-that-actually-scales",
-    title: "Cross-Border Collaboration That Actually Scales",
+    title: "Cross Border Collaboration That Actually Scales",
     excerpt:
-      "Lessons from California–Mexico initiatives where trust, logistics, and narrative align.",
+      "Lessons from California and Mexico initiatives where trust, logistics, and narrative align.",
     category: "Business",
     date: "2026-02-26",
     readTime: "7 min read",
@@ -94,7 +91,7 @@ export const insightPosts: InsightPost[] = [
     slug: "education-without-the-jargon",
     title: "Education Without the Jargon",
     excerpt:
-      "Translating complex industry knowledge into formats people can use—without diluting rigor.",
+      "Translating complex industry knowledge into formats people can use, without diluting rigor.",
     category: "Education",
     date: "2026-02-18",
     readTime: "5 min read",
@@ -132,23 +129,23 @@ export const serviceCards: ServiceCard[] = [
   {
     title: "Industry Features & Sponsored Insights",
     summary:
-      "Editorial-grade features that align your expertise with narratives audiences trust.",
+      "Editorial grade features that align your expertise with narratives audiences trust.",
     body:
-      "We develop long-form interviews, spotlight series, and insight packages that position your brand alongside credible voices. Every story is researched, structured for clarity, and designed to earn attention without feeling promotional. Ideal for category leadership, launches, and reputation-building moments.",
+      "We develop long form interviews, spotlight series, and insight packages that position your brand alongside credible voices. Every story is researched, structured for clarity, and designed to earn attention without feeling promotional. Ideal for category leadership, launches, and reputation building moments.",
   },
   {
     title: "Content & Newsletter Amplification",
     summary:
       "Turn your expertise into a consistent publishing rhythm with premium distribution.",
     body:
-      "From narrative strategy to production support, we help brands translate complex ideas into accessible formats—newsletters, essays, and multimedia snippets that match your tone. We focus on consistency, readability, and measurable engagement with a curated professional audience.",
+      "From narrative strategy to production support, we help brands translate complex ideas into accessible formats: newsletters, essays, and multimedia snippets that match your tone. We focus on consistency, readability, and measurable engagement with a curated professional audience.",
   },
   {
     title: "Event & Media Partnerships",
     summary:
-      "Experiences that connect storytelling with real-world presence and follow-through.",
+      "Experiences that connect storytelling with real world presence and follow through.",
     body:
-      "We partner on panels, community gatherings, and cross-border initiatives that blend media coverage with on-the-ground connection. Our approach pairs clear programming, elevated production values, and post-event content so momentum continues after the room clears.",
+      "We partner on panels, community gatherings, and cross border initiatives that blend media coverage with on the ground connection. Our approach pairs clear programming, elevated production values, and post event content so momentum continues after the room clears.",
   },
 ];
 
@@ -156,7 +153,7 @@ export const benefitCards: BenefitCard[] = [
   {
     title: "Elevated Brand Presence",
     body:
-      "Show up with editorial polish: refined visuals, credible sourcing, and messaging that reads intentional—not rushed.",
+      "Show up with editorial polish: refined visuals, credible sourcing, and messaging that reads intentional, not rushed.",
   },
   {
     title: "Strategic Thought Leadership",
@@ -166,12 +163,12 @@ export const benefitCards: BenefitCard[] = [
   {
     title: "Access to a Curated Audience",
     body:
-      "Reach professionals and decision-makers who actively seek insight—not passive traffic.",
+      "Reach professionals and decision makers who actively seek insight, not passive traffic.",
   },
   {
-    title: "High-Value Connections & Collaboration",
+    title: "High Value Connections & Collaboration",
     body:
-      "Open doors to partnerships, community moments, and cross-industry conversations that compound over time.",
+      "Open doors to partnerships, community moments, and cross industry conversations that compound over time.",
   },
 ];
 
@@ -180,15 +177,15 @@ export const projectCards: ProjectCard[] = [
     title: "California Leadership Salons",
     region: "California",
     description:
-      "Intimate conversations with founders and executives—recorded for podcast distribution and editorial follow-ups.",
+      "Intimate conversations with founders and executives, recorded for podcast distribution and editorial follow ups.",
     tags: ["leadership events", "media partnerships"],
   },
   {
-    title: "Cross-Border Storytelling Series",
+    title: "Cross Border Storytelling Series",
     region: "Mexico",
     description:
-      "A bilingual-friendly content initiative spotlighting innovation, community impact, and shared economic opportunity.",
-    tags: ["cross-border initiatives", "educational storytelling"],
+      "A bilingual friendly content initiative spotlighting innovation, community impact, and shared economic opportunity.",
+    tags: ["cross border initiatives", "educational storytelling"],
   },
   {
     title: "Community Collaborations Hub",
@@ -201,7 +198,7 @@ export const projectCards: ProjectCard[] = [
     title: "Educational Media Lab",
     region: "Education",
     description:
-      "Short-form explainers and long-form essays that translate industry complexity into practical insight.",
+      "Short form explainers and long form essays that translate industry complexity into practical insight.",
     tags: ["educational storytelling", "media partnerships"],
   },
 ];
@@ -212,14 +209,14 @@ export const founder = {
   bio: [
     "I’m an entrepreneur with a passion for connecting people, building businesses, and creating opportunities for growth. When I’m not working on new projects, I enjoy exploring events, meeting inspiring leaders, and finding ways to bring fresh ideas to life.",
   ],
-  portraitSrc: "/images/image.png",
-  portraitAlt: "Alberto Rodriguez — professional portrait",
+  portraitSrc: "/images/photo_2026-04-22_01-43-53.jpg",
+  portraitAlt: "Alberto Rodriguez, professional portrait",
 };
 
 export const galleryItems = [
   {
     title: "Executive interview",
-    caption: "Long-form conversation, studio capture",
+    caption: "Long form conversation, studio capture",
     imageSrc:
       "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
     imageAlt: "Interview setup with lights",

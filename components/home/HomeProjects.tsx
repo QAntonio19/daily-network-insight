@@ -10,7 +10,7 @@ export function HomeProjects() {
         <SectionHeading
           eyebrow="Initiatives"
           title="Featured projects & collaborations"
-          description="California to Mexico—and everywhere community shows up with intention."
+          description="California to Mexico, and everywhere community shows up with intention."
         />
         <div className="mt-14 grid gap-6 md:grid-cols-2">
           {projectCards.map((p) => (

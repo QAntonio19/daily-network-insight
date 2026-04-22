@@ -24,7 +24,7 @@ export function HomeHeart() {
         </div>
         <div className="editorial-rule my-12" />
         <p className="max-w-4xl font-serif text-2xl leading-relaxed text-navy sm:text-[1.65rem]">
-          We’re not just sharing content—we’re building a platform where ideas, insights,
+          We’re not just sharing content, we’re building a platform where ideas, insights,
           and opportunities come together to support the next generation of thinkers,
           creators, and leaders.
         </p>

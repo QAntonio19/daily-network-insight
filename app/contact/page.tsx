@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact & Partnerships",
   description:
-    "Partner with Daily Network Insights—media, events, newsletters, and strategic storytelling.",
+    "Partner with Daily Network Insights: media, events, newsletters, and strategic storytelling.",
 };
 
 export default function ContactPage() {
@@ -16,7 +16,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="Contact"
         title="Partner with us"
-        description="Tell us what you’re building. We’ll respond with clarity on fit, timing, and the right collaboration model—media-first, always."
+        description="Tell us what you’re building. We’ll respond with clarity on fit, timing, and the right collaboration model, media first, always."
       />
       <Container className="reveal-on-scroll py-14 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.05fr]">
@@ -30,7 +30,7 @@ export default function ContactPage() {
             </a>
             <p className="mt-8 text-sm leading-relaxed text-stone-600">
               We work with brands, founders, and organizations that want credible storytelling
-              and thoughtful distribution. If that’s you—reach out.
+              and thoughtful distribution. If that’s you, reach out.
             </p>
           </div>
           <div className="premium-surface p-8 lg:p-10">

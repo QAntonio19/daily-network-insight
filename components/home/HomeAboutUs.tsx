@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 /**
  * Bloque principal “About” en home (ancla #about-us): diseño “About the founder”
- * —imagen + cita flotante + copy + CTA.
+ * Imagen, cita flotante, copy y CTA.
  */
 export function HomeAboutUs() {
   return (
@@ -20,21 +20,16 @@ export function HomeAboutUs() {
         <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <div className="relative mx-auto w-full max-w-md lg:mx-0">
             <div className="editorial-frame">
-              <div className="editorial-frame__inner relative aspect-[3/4] overflow-hidden">
+              <div className="editorial-frame__inner relative aspect-[4/3] w-full overflow-hidden bg-stone-300">
                 <Image
                   src={founder.portraitSrc}
                   alt={founder.portraitAlt}
                   fill
-                  className="!top-[41px] !bottom-0 !left-0 !right-0 !h-[calc(100%-41px)] w-full object-cover object-[center_22%] scale-[1.18]"
+                  className="object-cover object-top"
                   sizes="(min-width: 1024px) 50vw, 90vw"
                   priority
                 />
               </div>
-            </div>
-            <div
-              className="premium-surface mt-4 max-w-[240px] p-4 text-sm leading-relaxed text-stone-700 shadow-lg sm:max-w-[260px] md:absolute md:bottom-[-1.25rem] md:right-[-0.5rem] md:mt-0 lg:bottom-[-1.5rem] lg:right-[-1rem]"
-            >
-              Warm, credible, and relentlessly clear.
             </div>
           </div>
           <div className="min-w-0">
@@ -53,7 +48,7 @@ export function HomeAboutUs() {
               href="/contact"
               className="btn-primary-shine mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-200 hover:bg-navy-soft"
             >
-              Connect or collaborate
+              About me
             </Link>
           </div>
         </div>

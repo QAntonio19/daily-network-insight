@@ -6,22 +6,22 @@ const pillars = [
   {
     title: "Daily Network Insights",
     href: "/insights",
-    description: "Long-form analysis, interviews, and field notes—grounded in practice.",
+    description: "Long form analysis, interviews, and field notes, grounded in practice.",
   },
   {
     title: "Curated Newsletter",
-    href: "/newsletter",
+    href: "/#newsletter",
     description: "A premium digest for professionals who want signal, not noise.",
   },
   {
     title: "Podcast Conversations",
     href: "/podcast",
-    description: "Leaders and operators in candid dialogue—tight edits, clear takeaways.",
+    description: "Leaders and operators in candid dialogue, tight edits, clear takeaways.",
   },
   {
     title: "Community Events",
     href: "/events",
-    description: "Gatherings designed for conversation, not crowds—online and in person.",
+    description: "Gatherings designed for conversation, not crowds, online and in person.",
   },
 ] as const;
 
