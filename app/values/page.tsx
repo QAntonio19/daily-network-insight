@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { HomeAtOurCore } from "@/components/home/HomeAtOurCore";
+import { HomeHeart } from "@/components/home/HomeHeart";
+import { HomeValues } from "@/components/home/HomeValues";
 import { PageHeader } from "@/components/PageHeader";
-import { Container } from "@/components/ui/Container";
 
 export const metadata: Metadata = {
   title: "Values",
   description:
-    "What we stand for at Daily Network Insights—editorial rigor, access, and intent.",
+    "Substance, mission, and purpose at Daily Network Insights—how we work and what we stand for.",
 };
 
 export default function ValuesPage() {
@@ -14,27 +16,11 @@ export default function ValuesPage() {
       <PageHeader
         eyebrow="Values"
         title="The principles behind our work"
-        description="We build media that people return to: clear, honest, and grounded in real experience—not noise for its own sake."
+        description="Clear standards, a grounded mission, and a purpose you’ll feel in how we show up in media, events, and community."
       />
-      <Container className="reveal-on-scroll py-14 sm:py-20">
-        <div className="mx-auto max-w-2xl space-y-8 text-sm leading-relaxed text-stone-600 sm:text-base">
-          <p>
-            <span className="font-medium text-navy">Credibility first.</span> We
-            interview practitioners, source carefully, and avoid empty trends. If we
-            publish it, you can expect structure, context, and care.
-          </p>
-          <p>
-            <span className="font-medium text-navy">Access without dilution.</span>{" "}
-            Complex ideas deserve plain language and strong editing—so insight travels
-            to busy readers without losing substance.
-          </p>
-          <p>
-            <span className="font-medium text-navy">Community with intent.</span> We
-            connect brands, leaders, and audiences through content, events, and
-            follow-through that respects everyone&apos;s time.
-          </p>
-        </div>
-      </Container>
+      <HomeAtOurCore />
+      <HomeValues />
+      <HomeHeart />
     </>
   );
 }

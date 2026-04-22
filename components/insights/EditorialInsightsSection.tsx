@@ -10,7 +10,7 @@ import type { InsightCategory } from "@/lib/types";
 
 type FilterState = InsightCategory | "All";
 
-export function HomeLatestInsights() {
+export function EditorialInsightsSection() {
   const [active, setActive] = useState<FilterState>("All");
 
   const filtered = useMemo(() => {
@@ -35,23 +35,14 @@ export function HomeLatestInsights() {
 
   return (
     <section
-      id="insights"
-      className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-20 sm:py-24"
+      className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-16 sm:py-20"
     >
       <Container>
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <SectionHeading
-            eyebrow="Insights"
-            title="Latest from the editorial desk"
-            description="Research-informed perspectives—built for clarity, designed for busy readers."
-          />
-          <Link
-            href="/insights"
-            className="filter-pill filter-pill-idle inline-flex w-fit px-5 py-2.5 text-sm font-medium normal-case tracking-normal"
-          >
-            View all insights →
-          </Link>
-        </div>
+        <SectionHeading
+          eyebrow="Insights"
+          title="Latest from the editorial desk"
+          description="Research-informed perspectives—built for clarity, designed for busy readers."
+        />
 
         <div className="mt-8 flex flex-wrap gap-2">
           <button
