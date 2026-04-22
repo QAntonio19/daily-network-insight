@@ -119,9 +119,6 @@ export function HomeAmbassadors() {
           >
             {ambassadorsIntro.title}
           </h2>
-          <p className="mt-3 text-sm font-medium tracking-wide text-stone-500 sm:text-base">
-            {ambassadorsIntro.tagline}
-          </p>
           <p className="mt-6 text-base leading-relaxed text-stone-600 sm:text-lg">
             {ambassadorsIntro.description}
           </p>
