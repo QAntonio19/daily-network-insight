@@ -7,7 +7,7 @@ import type {
 } from "./types";
 
 export const siteConfig = {
-  name: "Daily Network Insights",
+  name: "Our Values",
   tagline:
     "Research based, industry informed insights, accessible, relevant, and consistent.",
   email: "hello@dailynetworkinsights.com",
@@ -39,6 +39,22 @@ export const navItems: NavItem[] = [
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
 ];
+
+/** Columnas del bloque “Explore” en el footer (referencias a `navItems`, sin duplicar URLs). */
+export const footerExploreGroups = [
+  {
+    label: "Site",
+    items: [navItems[0], navItems[1], navItems[2], navItems[6], navItems[7]],
+  },
+  {
+    label: "Content",
+    items: [navItems[3], navItems[5]],
+  },
+  {
+    label: "Services",
+    items: [navItems[4]],
+  },
+] as const;
 
 export const insightCategories = [
   "Leadership",

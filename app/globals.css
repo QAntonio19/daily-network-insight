@@ -299,6 +299,45 @@ body::after {
   animation-delay: 0.3s;
 }
 
+/* Values scrolly — entrada según dirección del scroll */
+@keyframes values-wheel-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.9rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes values-wheel-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -0.9rem, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.values-wheel-in-up {
+  animation: values-wheel-fade-in-up 0.48s var(--ease-out-editorial) both;
+}
+.values-wheel-in-down {
+  animation: values-wheel-fade-in-down 0.48s var(--ease-out-editorial) both;
+}
+
+/* Contenido largo: scroll accesible sin barra visible (Firefox / WebKit) */
+.values-wheel-scroll-y {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.values-wheel-scroll-y::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 @supports (animation-timeline: view()) {
   .reveal-on-scroll {
     animation: fade-up 0.9s var(--ease-out-editorial) both;
@@ -310,6 +349,12 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .values-wheel-in-up,
+  .values-wheel-in-down {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   .animate-fade-up,
   .animate-fade-in,
@@ -500,17 +545,6 @@ body::after {
   );
   opacity: 0.55;
   pointer-events: none;
-}
-
-.closing-band {
-  position: relative;
-  overflow: hidden;
-  border-top: 1px solid color-mix(in oklab, var(--navy) 8%, transparent);
-  background: linear-gradient(
-    180deg,
-    color-mix(in oklab, var(--beige) 38%, transparent) 0%,
-    var(--ivory) 100%
-  );
 }
 
 .section-join-mission {
