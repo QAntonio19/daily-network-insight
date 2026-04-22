@@ -1,5 +1,6 @@
 import type {
   BenefitCard,
+  EditorialIntroBlock,
   InsightPost,
   NavItem,
   ProjectCard,
@@ -20,13 +21,25 @@ export const siteConfig = {
 
 export const navItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Insights", href: "/insights" },
-  { label: "Podcast", href: "/podcast" },
-  { label: "Newsletter", href: "/newsletter" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Events", href: "/events" },
+  { label: "About us", href: "/about" },
+  { label: "Values", href: "/values" },
+  {
+    label: "Insights",
+    href: "/insights",
+    children: [
+      { label: "Podcast", href: "/podcast" },
+      { label: "Newsletter", href: "/newsletter" },
+    ],
+  },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Projects", href: "/projects" },
+      { label: "Events", href: "/events" },
+    ],
+  },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -192,6 +205,24 @@ export const projectCards: ProjectCard[] = [
     tags: ["educational storytelling", "media partnerships"],
   },
 ];
+
+export const aboutNarrative: {
+  founder: EditorialIntroBlock;
+  companyFoundation: EditorialIntroBlock;
+} = {
+  founder: {
+    eyebrow: "About me",
+    title: "I build media where expert knowledge can land without the noise",
+    description:
+      "I started Daily Network Insights to close the gap between what experts know and what readers can use—without watering down the depth. My work is shaped by ongoing conversations with founders, operators, educators, and leaders who operate in the real world and care about craft. I turn those signal-rich exchanges into long-form insight, audio, and formats people can return to when they are ready to act.",
+  },
+  companyFoundation: {
+    eyebrow: "The company’s foundation",
+    title: "Editorial first—grounded in research, interviews, and lived experience",
+    description:
+      "Daily Network Insights exists to shorten the distance between complex industry information and clear, intentional understanding. We are a media platform by design: not a job board, a school outreach program, or a generic career site. The foundation is a consistent publishing practice—credible sources, careful editing, and community-centered programming—so your audience can stay informed, confident, and connected as the landscape changes.",
+  },
+};
 
 export const founder = {
   name: "Founder & Editorial Lead",

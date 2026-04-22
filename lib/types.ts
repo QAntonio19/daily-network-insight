@@ -1,6 +1,19 @@
+export interface NavSubItem {
+  label: string;
+  href: string;
+}
+
 export interface NavItem {
   label: string;
   href: string;
+  children?: readonly NavSubItem[];
+}
+
+/** Three-line editorial block: small label, headline, body (reused e.g. on About). */
+export interface EditorialIntroBlock {
+  eyebrow: string;
+  title: string;
+  description: string;
 }
 
 export type InsightCategory =

@@ -23,11 +23,6 @@ const pillars = [
     href: "/events",
     description: "Gatherings designed for conversation, not crowds—online and in person.",
   },
-  {
-    title: "Mentorship Opportunities",
-    href: "/contact",
-    description: "Structured ways to learn from people who’ve done the work—for real.",
-  },
 ] as const;
 
 export function HomeContentPillars() {
@@ -41,22 +36,26 @@ export function HomeContentPillars() {
           align="center"
           invert
         />
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {pillars.map((p, i) => (
             <Link
               key={p.title}
               href={p.href}
-              className="glass-dark-tile group rounded-2xl p-6"
+              className="glass-dark-tile group rounded-2xl p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ivory/40"
               style={{ animationDelay: `${i * 40}ms` }}
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-300">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400 transition-colors group-hover:text-stone-200">
                 {String(i + 1).padStart(2, "0")}
               </p>
-              <h3 className="mt-3 font-serif text-2xl text-white transition group-hover:text-terracotta-soft">
+              <h3 className="mt-3 font-serif text-2xl text-white">
                 {p.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-stone-300">{p.description}</p>
-              <p className="mt-5 text-sm font-medium text-terracotta-soft">Explore →</p>
+              <p className="mt-3 text-sm leading-relaxed text-stone-300 transition-colors group-hover:text-stone-200">
+                {p.description}
+              </p>
+              <p className="mt-5 text-sm font-medium text-stone-400 transition-colors group-hover:text-ivory">
+                Explore →
+              </p>
             </Link>
           ))}
         </div>

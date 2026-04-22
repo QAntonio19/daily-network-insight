@@ -40,6 +40,20 @@ export function SiteFooter() {
                     >
                       {item.label}
                     </Link>
+                    {item.children && item.children.length > 0 ? (
+                      <ul className="mt-2 space-y-1.5 border-l border-stone-600/50 pl-3">
+                        {item.children.map((sub) => (
+                          <li key={sub.href}>
+                            <Link
+                              href={sub.href}
+                              className="text-stone-300 transition hover:text-ivory"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </li>
                 ))}
               </ul>
