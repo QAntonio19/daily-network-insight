@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode, type ElementType } from "react";
 
 interface RevealOnScrollProps {
   children: ReactNode;
   className?: string;
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
   threshold?: number;
   rootMargin?: string;
 }
@@ -47,7 +47,7 @@ export function RevealOnScroll({
     };
   }, [threshold, rootMargin]);
 
-  const Component = Tag as React.ElementType;
+  const Component = Tag;
 
   return (
     <Component ref={ref} className={`reveal-section ${className}`}>
