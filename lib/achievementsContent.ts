@@ -36,8 +36,8 @@ export const achievementsItems = [
     imageAlt:
       "Team holding the Foothill Sentry newspaper featuring Daily Network Insights",
     paragraphs: [
-      "Daily Network Insights celebrates one year of empowering students and young professionals through mentorship, internships, community engagement, and real world learning opportunities.",
-      "Our impact was recognized in the Foothill Sentry, which helped expand our visibility and strengthen partnerships with local organizations, colleges, and business leaders.",
+      "Daily Network Insights celebrates one year of growth, empowering students, young professionals, and the local community through meaningful connections, community engagement, and access to real-world insights.",
+      "Our impact was recognized in the Foothill Sentry, helping expand our visibility and strengthen relationships with local leaders, organizations, and business communities. This recognition reflects the real moments we’ve created bringing people together, sharing ideas, and building connections that move individuals forward.",
       "This milestone reflects the dedication of our community and our ongoing commitment to inspiring, supporting, and preparing the next generation of entrepreneurs and leaders.",
     ],
   },

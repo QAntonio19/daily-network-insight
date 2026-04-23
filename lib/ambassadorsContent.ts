@@ -27,7 +27,7 @@ export const ambassadors: Ambassador[] = [
     id: "farah-kanchar",
     department: "Organization & Diversity",
     name: "Farah Kanchar",
-    email: "info@aabchamber.org",
+    email: "farah@aabchamber.org",
     phone: "949 287 2465",
     imageSrc: "/images/IMG_3358-Picsart-BackgroundRemover.JPG",
     imageAlt: "Farah Kanchar, professional portrait",

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { founder } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 
 /**
  * Bloque principal “About” en home (ancla #about-us): diseño “About the founder”
@@ -15,10 +16,11 @@ export function HomeAboutUs() {
       className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
       aria-label="About us"
     >
-      <Container className="reveal-on-scroll py-16 sm:py-20">
-        <SectionHeading eyebrow="Leadership" title="About the founder" />
-        <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
-          <div className="relative mx-auto w-full max-w-md lg:mx-0">
+      <Container className="py-16 sm:py-20">
+        <RevealOnScroll>
+          <SectionHeading eyebrow="Leadership" title="About the founder" />
+          <div className="mt-12 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+            <div className="reveal-left relative mx-auto w-full max-w-md lg:mx-0">
             <div className="editorial-frame">
               <div className="editorial-frame__inner relative aspect-[4/3] w-full overflow-hidden bg-stone-300">
                 <Image
@@ -30,9 +32,9 @@ export function HomeAboutUs() {
                   priority
                 />
               </div>
+              </div>
             </div>
-          </div>
-          <div className="min-w-0">
+            <div className="reveal-right min-w-0">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-terracotta">
               {founder.role}
             </p>
@@ -51,7 +53,8 @@ export function HomeAboutUs() {
               About me
             </Link>
           </div>
-        </div>
+          </div>
+        </RevealOnScroll>
       </Container>
     </section>
   );

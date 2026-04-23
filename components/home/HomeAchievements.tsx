@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { achievementsItems } from "@/lib/achievementsContent";
 
 /**
@@ -13,20 +14,23 @@ export function HomeAchievements() {
       className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
       aria-labelledby="achievements-heading"
     >
-      <Container className="reveal-on-scroll py-16 sm:py-20 lg:py-24">
-        <SectionHeading
-          id="achievements-heading"
-          align="center"
-          eyebrow="Milestones"
-          title="Achievements"
-          description="Highlights from our work in media, community, and partnership."
-        />
+      <Container className="py-16 sm:py-20 lg:py-24">
+        <RevealOnScroll>
+          <SectionHeading
+            id="achievements-heading"
+            align="center"
+            eyebrow="Milestones"
+            title="Achievements"
+            description="Highlights from our work in media, community, and partnership."
+          />
+        </RevealOnScroll>
         <ol className="mt-12 list-none space-y-0 p-0 lg:mt-16">
           {achievementsItems.map((item, index) => {
             const imageOnRight = index % 2 === 1;
             return (
-              <li
+              <RevealOnScroll
                 key={item.id}
+                as="li"
                 className="border-t border-stone-900/10 pt-10 first:border-t-0 first:pt-0 sm:pt-12 sm:first:pt-0"
               >
                 <div
@@ -86,7 +90,7 @@ export function HomeAchievements() {
                     ))}
                   </div>
                 </div>
-              </li>
+              </RevealOnScroll>
             );
           })}
         </ol>

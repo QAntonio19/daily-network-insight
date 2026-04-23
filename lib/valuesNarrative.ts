@@ -40,7 +40,7 @@ export const valuesNarrativeSteps = [
     eyebrow: "Initiatives",
     title: "Featured projects & collaborations",
     body:
-      "From California to Mexico, we create intentional spaces for leadership, mentorship, and practical knowledge with real communities. Leadership Salons, cross-border storytelling, collaborations, and educational media that connect leadership, mentorship, and practical knowledge with real communities.",
+      "From California to Mexico, we create platforms for industry insight, storytelling, and real-world connection. Through media, cross-border collaborations, and community events, we bring together professionals, brands, and ideas to share knowledge, increase visibility, and create meaningful opportunities.",
     mark: "⬡",
   },
 ] as const;

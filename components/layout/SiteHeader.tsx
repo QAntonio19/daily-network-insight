@@ -238,40 +238,42 @@ export function SiteHeader() {
         </div>
       </div>
 
-      {open ? (
-        <div
-          id="mobile-nav"
-          className="mobile-nav-drape px-5 pb-6 pt-2 lg:hidden"
-        >
-          <nav className="flex flex-col gap-1" aria-label="Mobile primary">
-            {withoutContact.map((item) => {
-              if (item.href === "/") {
-                return (
-                  <Link
-                    key={item.href}
-                    href="/"
-                    onClick={() => {
-                      setOpen(false);
-                    }}
-                    className={headerMobileNavClass({ centered: true })}
-                  >
-                    Home
-                  </Link>
-                );
-              }
-              return (
-                <div key={item.href} className="flex flex-col gap-0.5">
-                  {item.children?.length ? (
-                    <>
+      <div
+        id="mobile-nav"
+        className="mobile-nav-grid lg:hidden"
+        data-state={open ? "open" : "closed"}
+        aria-hidden={!open}
+        inert={!open ? true : undefined}
+      >
+        <div className="mobile-nav-grid__inner">
+          <div className="mobile-nav-drape px-5 pb-6 pt-2">
+            <nav className="flex flex-col gap-1" aria-label="Mobile primary">
+              {withoutContact.map((item) => {
+                if (item.href === "/") {
+                  return (
+                    <div key={item.href} className="mobile-nav-item">
                       <Link
-                        href={item.href}
+                        href="/"
                         onClick={() => setOpen(false)}
-                        className={headerMobileNavClass()}
+                        className={headerMobileNavClass({ centered: true })}
                       >
-                        {item.label}
+                        Home
                       </Link>
-                      {item.children.map((sub) => {
-                        return (
+                    </div>
+                  );
+                }
+                return (
+                  <div key={item.href} className="mobile-nav-item flex flex-col gap-0.5">
+                    {item.children?.length ? (
+                      <>
+                        <Link
+                          href={item.href}
+                          onClick={() => setOpen(false)}
+                          className={headerMobileNavClass()}
+                        >
+                          {item.label}
+                        </Link>
+                        {item.children.map((sub) => (
                           <Link
                             key={sub.href}
                             href={sub.href}
@@ -280,31 +282,33 @@ export function SiteHeader() {
                           >
                             {sub.label}
                           </Link>
-                        );
-                      })}
-                    </>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className={headerMobileNavClass()}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </div>
-              );
-            })}
-            <Link
-              href="/contact"
-              onClick={() => setOpen(false)}
-              className="btn-primary-shine mt-1 rounded-xl border border-navy/20 bg-navy px-3 py-3 text-center text-base font-medium text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-[220ms] hover:bg-navy-soft hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]"
-            >
-              Contact
-            </Link>
-          </nav>
+                        ))}
+                      </>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        className={headerMobileNavClass()}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
+                  </div>
+                );
+              })}
+              <div className="mobile-nav-item">
+                <Link
+                  href="/contact"
+                  onClick={() => setOpen(false)}
+                  className="btn-primary-shine mt-1 block rounded-xl border border-navy/20 bg-navy px-3 py-3 text-center text-base font-medium text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-[220ms] hover:bg-navy-soft hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]"
+                >
+                  Contact
+                </Link>
+              </div>
+            </nav>
+          </div>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }

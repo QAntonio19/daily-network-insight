@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import {
   ambassadors,
   ambassadorsIntro,
@@ -108,8 +109,9 @@ export function HomeAmbassadors() {
       className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
       aria-labelledby="ambassadors-heading"
     >
-      <Container className="reveal-on-scroll py-16 sm:py-20 lg:py-24">
-        <header className="mx-auto max-w-3xl text-center">
+      <Container className="py-16 sm:py-20 lg:py-24">
+        <RevealOnScroll>
+          <header className="mx-auto max-w-3xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-terracotta">
             {ambassadorsIntro.eyebrow}
           </p>
@@ -123,11 +125,14 @@ export function HomeAmbassadors() {
             {ambassadorsIntro.description}
           </p>
         </header>
-        <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
-          {ambassadors.map((person) => (
-            <AmbassadorCard key={person.id} person={person} />
-          ))}
-        </div>
+          <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
+            {ambassadors.map((person) => (
+              <div key={person.id} className="reveal-scale">
+                <AmbassadorCard person={person} />
+              </div>
+            ))}
+          </div>
+        </RevealOnScroll>
       </Container>
     </section>
   );

@@ -157,7 +157,7 @@ export function ValuesScrollWheel() {
 
             {/* Móvil: full-bleed con max-sm (sm:ml-0 rompía mx-auto y desplazaba el círculo a la izquierda en PC). */}
             <div
-              className="relative mx-auto box-border min-w-0 w-full max-sm:ml-[calc(50%-50dvw)] max-sm:w-[100dvw] max-sm:max-w-[100dvw] sm:max-w-[min(100%,40rem)] md:max-w-[min(100%,44rem)]"
+              className="relative mx-auto box-border min-w-0 w-full max-sm:ml-[calc(50%-56dvw)] max-sm:w-[112dvw] max-sm:max-w-[112dvw] sm:max-w-[min(100%,40rem)] md:max-w-[min(100%,44rem)]"
               role="region"
               aria-labelledby={`${id}-h2`}
             >

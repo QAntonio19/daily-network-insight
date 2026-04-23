@@ -373,6 +373,99 @@ body::after {
   height: 0;
 }
 
+/* Reveal on scroll — IntersectionObserver driven (JS adds .is-visible) */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease-out-editorial),
+    transform 0.7s var(--ease-out-editorial);
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children within visible sections */
+.reveal-section.is-visible .reveal-item {
+  animation: reveal-item-up 0.6s var(--ease-out-editorial) both;
+}
+
+@keyframes reveal-item-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger delays for reveal-item children */
+.reveal-item:nth-child(1) { animation-delay: 0.05s; }
+.reveal-item:nth-child(2) { animation-delay: 0.1s; }
+.reveal-item:nth-child(3) { animation-delay: 0.15s; }
+.reveal-item:nth-child(4) { animation-delay: 0.2s; }
+.reveal-item:nth-child(5) { animation-delay: 0.25s; }
+.reveal-item:nth-child(6) { animation-delay: 0.3s; }
+.reveal-item:nth-child(7) { animation-delay: 0.35s; }
+.reveal-item:nth-child(8) { animation-delay: 0.4s; }
+
+/* Scale-up variant for cards */
+.reveal-section.is-visible .reveal-scale {
+  animation: reveal-scale-up 0.65s var(--ease-out-editorial) both;
+}
+
+@keyframes reveal-scale-up {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.reveal-scale:nth-child(1) { animation-delay: 0.08s; }
+.reveal-scale:nth-child(2) { animation-delay: 0.16s; }
+.reveal-scale:nth-child(3) { animation-delay: 0.24s; }
+.reveal-scale:nth-child(4) { animation-delay: 0.32s; }
+
+/* Slide-in from left/right variants */
+.reveal-section.is-visible .reveal-left {
+  animation: reveal-slide-left 0.7s var(--ease-out-editorial) both;
+}
+
+.reveal-section.is-visible .reveal-right {
+  animation: reveal-slide-right 0.7s var(--ease-out-editorial) both;
+}
+
+@keyframes reveal-slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Legacy CSS-only fallback (modern browsers with animation-timeline) */
 @supports (animation-timeline: view()) {
   .reveal-on-scroll {
     animation: fade-up 0.9s var(--ease-out-editorial) both;
@@ -405,6 +498,19 @@ body::after {
   .animate-fade-in,
   .animate-float-slow,
   .reveal-on-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .reveal-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .reveal-section .reveal-item,
+  .reveal-section .reveal-scale,
+  .reveal-section .reveal-left,
+  .reveal-section .reveal-right {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
@@ -680,11 +786,61 @@ body::after {
     inset 0 1px 0 color-mix(in oklab, white 12%, transparent);
 }
 
+/* Mobile nav — slide-down / slide-up con grid-rows (sin JS de altura) */
+.mobile-nav-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s var(--ease-out-editorial);
+}
+
+.mobile-nav-grid[data-state="open"] {
+  grid-template-rows: 1fr;
+}
+
+/* El hijo directo necesita overflow:hidden para que el colapso funcione */
+.mobile-nav-grid__inner {
+  overflow: hidden;
+}
+
 .mobile-nav-drape {
   border-top: 1px solid color-mix(in oklab, var(--navy) 10%, transparent);
   background: color-mix(in oklab, var(--glass-light) 92%, transparent);
   backdrop-filter: blur(18px) saturate(1.35);
   -webkit-backdrop-filter: blur(18px) saturate(1.35);
+}
+
+/* Ítems del menú móvil: fade-up al abrir */
+@keyframes mobile-nav-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobile-nav-grid[data-state="open"] .mobile-nav-item {
+  animation: mobile-nav-item-in 0.28s var(--ease-out-editorial) both;
+}
+
+.mobile-nav-item:nth-child(1) { animation-delay: 0.04s; }
+.mobile-nav-item:nth-child(2) { animation-delay: 0.08s; }
+.mobile-nav-item:nth-child(3) { animation-delay: 0.12s; }
+.mobile-nav-item:nth-child(4) { animation-delay: 0.16s; }
+.mobile-nav-item:nth-child(5) { animation-delay: 0.20s; }
+.mobile-nav-item:nth-child(6) { animation-delay: 0.24s; }
+.mobile-nav-item:nth-child(7) { animation-delay: 0.28s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-nav-grid,
+  .mobile-nav-grid[data-state="open"] {
+    transition-duration: 0.01ms;
+  }
+  .mobile-nav-grid[data-state="open"] .mobile-nav-item {
+    animation: none;
+  }
 }
 
 .filter-pill {

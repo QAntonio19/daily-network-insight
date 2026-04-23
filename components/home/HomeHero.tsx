@@ -38,24 +38,16 @@ export function HomeHero() {
 
         <div className="relative">
           <div className="editorial-frame">
-            <div className="editorial-frame__inner aspect-[4/5]">
+            <div className="editorial-frame__inner aspect-[5/6]">
               <Image
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80"
-                alt="Abstract editorial composition with warm light and architectural lines"
+                src="/images/photo_2026-04-23_04-18-27.jpg"
+                alt="Team members networking at a community event"
                 fill
                 priority
                 className="object-cover"
                 sizes="(min-width: 1024px) 44vw, 100vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-navy/40 via-navy/5 to-transparent" />
-              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/30 bg-white/[0.12] p-4 text-sm text-white shadow-lg backdrop-blur-xl backdrop-saturate-150">
-                <p className="font-serif text-lg tracking-tight">
-                  Editorial clarity, built for credibility.
-                </p>
-                <p className="mt-1 text-xs text-white/85">
-                  Interviews · Newsletters · Podcasts · Events
-                </p>
-              </div>
             </div>
           </div>
         </div>
