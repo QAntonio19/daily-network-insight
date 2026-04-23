@@ -7,7 +7,7 @@ export function HomeFaq() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 border-b border-stone-900/10 sm:scroll-mt-28"
+      className="border-b border-stone-900/10"
       aria-labelledby="faq-heading"
     >
       <Container className="py-16 sm:py-20 lg:py-24">

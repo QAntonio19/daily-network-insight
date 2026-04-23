@@ -106,7 +106,7 @@ export function HomeAmbassadors() {
   return (
     <section
       id="ambassadors"
-      className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
+      className="border-b border-stone-900/10 bg-transparent"
       aria-labelledby="ambassadors-heading"
     >
       <Container className="py-16 sm:py-20 lg:py-24">

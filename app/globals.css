@@ -53,6 +53,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* Global anchor offset: clears the sticky header on all pages/devices */
+  scroll-padding-top: 5rem; /* 80px — mobile header ~74px */
 }
 
 /* Home FAQ — colapsada por defecto; [data-state=open] al expandir (hover desktop / tap móvil) */

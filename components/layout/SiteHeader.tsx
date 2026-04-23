@@ -143,10 +143,54 @@ function renderDesktopNavItem(
   );
 }
 
+/** MENU_CLOSE_MS must match the CSS transition duration of `.mobile-nav-grid` */
+const MENU_CLOSE_MS = 360;
+
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [openDesktopMenu, setOpenDesktopMenu] = useState<string | null>(null);
+
+  /**
+   * For hash-links clicked from the mobile menu:
+   * 1. Prevent the browser's instant scroll
+   * 2. Close the menu
+   * 3. Wait for the close animation to finish
+   * 4. Scroll to the target using scroll-padding-top (CSS handles offset)
+   */
+  function handleMobileHashLink(
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) {
+    // Only intercept hash links when already on the home page.
+    // If on another page, let Next.js navigate normally (HomeHashScroll handles scroll on arrival).
+    const isHashOnCurrentPage =
+      pathname === "/" &&
+      (href.startsWith("/#") || href.startsWith("#"));
+
+    if (!isHashOnCurrentPage) {
+      setOpen(false);
+      return;
+    }
+
+    e.preventDefault();
+    setOpen(false);
+
+    const hash = href.includes("#") ? href.split("#")[1] : null;
+    if (!hash) return;
+
+    setTimeout(() => {
+      const el = document.getElementById(hash);
+      if (!el) return;
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+      ).matches;
+      el.scrollIntoView({
+        block: "start",
+        behavior: prefersReduced ? "auto" : "smooth",
+      });
+    }, MENU_CLOSE_MS);
+  }
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -274,7 +318,7 @@ export function SiteHeader() {
               <div className="mobile-nav-item border-b border-stone-900/8">
                 <Link
                   href="/"
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleMobileHashLink(e, "/")}
                   className={mobileNavRowClass + " border-none"}
                 >
                   Home
@@ -287,7 +331,7 @@ export function SiteHeader() {
                     <div>
                       <Link
                         href={item.href}
-                        onClick={() => setOpen(false)}
+                        onClick={(e) => handleMobileHashLink(e, item.href)}
                         className={mobileNavRowClass}
                       >
                         <span>{item.label}</span>
@@ -302,7 +346,7 @@ export function SiteHeader() {
                             <Link
                               key={sub.href}
                               href={sub.href}
-                              onClick={() => setOpen(false)}
+                              onClick={(e) => handleMobileHashLink(e, sub.href)}
                               className={mobileSubRowClass}
                               {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             >
@@ -315,7 +359,7 @@ export function SiteHeader() {
                   ) : (
                     <Link
                       href={item.href}
-                      onClick={() => setOpen(false)}
+                      onClick={(e) => handleMobileHashLink(e, item.href)}
                       className={mobileNavRowClass}
                     >
                       {item.label}

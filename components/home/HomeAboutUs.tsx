@@ -13,7 +13,7 @@ export function HomeAboutUs() {
   return (
     <section
       id="about-us"
-      className="scroll-mt-24 border-b border-stone-900/10 bg-transparent sm:scroll-mt-28"
+      className="border-b border-stone-900/10 bg-transparent"
       aria-label="About us"
     >
       <Container className="py-16 sm:py-20">

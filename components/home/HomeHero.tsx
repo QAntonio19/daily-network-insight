@@ -6,7 +6,7 @@ export function HomeHero() {
   return (
     <section
       id="top"
-      className="hero-editorial relative scroll-mt-20 overflow-hidden sm:scroll-mt-24"
+      className="hero-editorial relative overflow-hidden"
     >
       <div className="pointer-events-none absolute inset-0 opacity-90">
         <div className="hero-blob-a animate-float-slow absolute -left-24 top-8 h-80 w-80 rounded-full" />

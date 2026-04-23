@@ -41,7 +41,7 @@ export function SiteFooter() {
             <p className="mt-4 max-w-md text-sm leading-relaxed text-stone-300">
               {siteConfig.tagline}
             </p>
-            <div id="newsletter" className="mt-8 scroll-mt-28">
+            <div id="newsletter" className="mt-8">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400">
                 Newsletter
               </p>
