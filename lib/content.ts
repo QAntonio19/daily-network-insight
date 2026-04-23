@@ -25,7 +25,10 @@ export const navItems: NavItem[] = [
   {
     label: "Insights",
     href: "/insights",
-    children: [{ label: "Podcast", href: "/podcast" }],
+    children: [
+      { label: "Podcast", href: "/podcast" },
+      { label: "Timeline", href: "/insights/timeline" },
+    ],
   },
   {
     label: "Services",
