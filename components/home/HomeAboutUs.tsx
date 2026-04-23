@@ -45,7 +45,7 @@ export function HomeAboutUs() {
               ))}
             </div>
             <Link
-              href="/contact"
+              href="/my-journey"
               className="btn-primary-shine mt-8 inline-flex min-h-11 items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-200 hover:bg-navy-soft"
             >
               About me
