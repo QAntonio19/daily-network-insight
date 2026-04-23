@@ -721,28 +721,3 @@ body::after {
   border-color: color-mix(in oklab, var(--navy) 12%, transparent);
 }
 
-.gallery-figure {
-  border-radius: 1rem;
-  overflow: hidden;
-  border: 1px solid color-mix(in oklab, var(--navy) 8%, transparent);
-  background: linear-gradient(
-    165deg,
-    color-mix(in oklab, white 94%, transparent),
-    color-mix(in oklab, var(--beige) 30%, white)
-  );
-  box-shadow: var(--shadow-inner-lit), var(--shadow-soft);
-  transition:
-    transform 280ms var(--ease-out-editorial),
-    box-shadow 280ms var(--ease-out-editorial);
-}
-
-.gallery-figure:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-elevated);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .gallery-figure:hover {
-    transform: none;
-  }
-}

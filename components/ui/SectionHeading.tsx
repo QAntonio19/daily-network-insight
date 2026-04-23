@@ -6,6 +6,8 @@ interface SectionHeadingProps {
   invert?: boolean;
   /** Use h3 when this block sits under a page-level h2 (e.g. home value sections). */
   as?: "h2" | "h3";
+  /** Ancla para `aria-labelledby` en la sección padre. */
+  id?: string;
 }
 
 export function SectionHeading({
@@ -15,6 +17,7 @@ export function SectionHeading({
   align = "left",
   invert = false,
   as: headingTag = "h2",
+  id: titleId,
 }: SectionHeadingProps) {
   const alignClass = align === "center" ? "text-center mx-auto" : "";
   const TitleTag = headingTag;
@@ -31,7 +34,7 @@ export function SectionHeading({
           {eyebrow}
         </p>
       ) : null}
-      <TitleTag className={titleClass}>
+      <TitleTag id={titleId} className={titleClass}>
         {title}
       </TitleTag>
       {description ? (

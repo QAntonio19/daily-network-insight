@@ -223,53 +223,10 @@ export const founder = {
   name: "Alberto Rodriguez",
   role: "Founder",
   bio: [
-    "I’m an entrepreneur with a passion for connecting people, building businesses, and creating opportunities for growth. When I’m not working on new projects, I enjoy exploring events, meeting inspiring leaders, and finding ways to bring fresh ideas to life.",
+    "I'm an entrepreneur focused on building Daily Network Insights as a platform that connects people to real-world insight and opportunity. My work is centered on turning industry knowledge into content that is clear, relevant, and useful.",
+    "Through media, events, and partnerships, I aim to create spaces where ideas are shared, connections are built, and growth becomes more accessible.",
   ],
   portraitSrc: "/images/photo_2026-04-22_01-43-53.jpg",
   portraitAlt: "Alberto Rodriguez, professional portrait",
 };
 
-export const galleryItems = [
-  {
-    title: "Executive interview",
-    caption: "Long form conversation, studio capture",
-    imageSrc:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Interview setup with lights",
-  },
-  {
-    title: "Community gathering",
-    caption: "Networking + curated programming",
-    imageSrc:
-      "https://images.unsplash.com/photo-1540575467063-027aef7f9f6b?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Audience at an event",
-  },
-  {
-    title: "On stage",
-    caption: "Keynote moments and panels",
-    imageSrc:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Speaker on stage",
-  },
-  {
-    title: "Collaboration",
-    caption: "Partners building together",
-    imageSrc:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Team collaboration",
-  },
-  {
-    title: "Studio session",
-    caption: "Podcast production day",
-    imageSrc:
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Podcast microphones",
-  },
-  {
-    title: "Field moments",
-    caption: "Community engagement on location",
-    imageSrc:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "People talking outdoors",
-  },
-] as const;

@@ -3,10 +3,10 @@ import { HomeContentPillars } from "@/components/home/HomeContentPillars";
 import { HomeAmbassadors } from "@/components/home/HomeAmbassadors";
 import { HomeCommunityPartners } from "@/components/home/HomeCommunityPartners";
 import { HomeFaq } from "@/components/home/HomeFaq";
-import { HomeGallery } from "@/components/home/HomeGallery";
 import { HomeHero } from "@/components/home/HomeHero";
 import { HomeHashScroll } from "@/components/home/HomeHashScroll";
 import { HomeValuesSection } from "@/components/home/HomeValuesSection";
+import { HomeAchievements } from "@/components/home/HomeAchievements";
 
 export default function HomePage() {
   return (
@@ -15,7 +15,7 @@ export default function HomePage() {
       <HomeHero />
       <HomeContentPillars />
       <HomeValuesSection />
-      <HomeGallery />
+      <HomeAchievements />
       <HomeAboutUs />
       <HomeAmbassadors />
       <HomeCommunityPartners />
