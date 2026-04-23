@@ -26,7 +26,7 @@ export const navItems: NavItem[] = [
     label: "Insights",
     href: "/insights",
     children: [
-      { label: "Podcast", href: "/podcast" },
+      { label: "Podcast", href: "https://youtube.com/playlist?list=PLKb-3mW-AyZVjI6OrnhBw3ufiqBRRkYE4&si=jQO80Cec7YHoSnLU" },
       { label: "Timeline", href: "/insights/timeline" },
     ],
   },

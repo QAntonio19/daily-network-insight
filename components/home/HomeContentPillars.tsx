@@ -21,7 +21,7 @@ const pillars = [
   },
   {
     title: "Community Events",
-    href: "/events",
+    href: "https://www.eventbrite.com/o/daily-network-insights-58486830883",
     description: "Gatherings designed for conversation, not crowds, online and in person.",
   },
 ] as const;
@@ -43,6 +43,7 @@ export function HomeContentPillars() {
               <Link
                 key={p.title}
                 href={p.href}
+                {...(p.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="reveal-scale glass-dark-tile group rounded-2xl p-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ivory/40"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone-400 transition-colors group-hover:text-stone-200">

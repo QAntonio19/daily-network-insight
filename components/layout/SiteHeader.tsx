@@ -98,12 +98,14 @@ function NavDesktopItemWithSubmenu({
             role="menu"
           >
             {children.map((sub) => {
+              const isExternal = sub.href.startsWith("http");
               return (
                 <li key={sub.href} className="list-none w-max">
                   <Link
                     href={sub.href}
                     role="menuitem"
                     className={headerSubMenuRowClass}
+                    {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     onClick={() => {
                       setOpenKey(null);
                     }}
@@ -273,16 +275,20 @@ export function SiteHeader() {
                         >
                           {item.label}
                         </Link>
-                        {item.children.map((sub) => (
-                          <Link
-                            key={sub.href}
-                            href={sub.href}
-                            onClick={() => setOpen(false)}
-                            className={`${headerSubMenuRowClass} pl-8 pr-3`}
-                          >
-                            {sub.label}
-                          </Link>
-                        ))}
+                        {item.children.map((sub) => {
+                          const isExternal = sub.href.startsWith("http");
+                          return (
+                            <Link
+                              key={sub.href}
+                              href={sub.href}
+                              onClick={() => setOpen(false)}
+                              className={`${headerSubMenuRowClass} pl-8 pr-3`}
+                              {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                            >
+                              {sub.label}
+                            </Link>
+                          );
+                        })}
                       </>
                     ) : (
                       <Link
