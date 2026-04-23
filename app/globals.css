@@ -327,6 +327,41 @@ body::after {
   animation: values-wheel-fade-in-down 0.48s var(--ease-out-editorial) both;
 }
 
+/* Community partners — logos en órbita (contrarotación mantiene los hex derechos) */
+@keyframes community-orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes community-orbit-counter {
+  to {
+    transform: rotate(-360deg);
+  }
+}
+.community-orbit-spin {
+  transform-origin: 50% 50%;
+  animation: community-orbit-spin 55s linear infinite;
+}
+.community-orbit-counter {
+  animation: community-orbit-counter 55s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+/* Carrusel de citas: entrada lateral (como deslizamiento horizontal) */
+@keyframes community-partners-carousel-in {
+  from {
+    opacity: 0;
+    transform: translate3d(1.75rem, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+.community-partners-carousel-slide {
+  animation: community-partners-carousel-in 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 /* Contenido largo: scroll accesible sin barra visible (Firefox / WebKit) */
 .values-wheel-scroll-y {
   -ms-overflow-style: none;
@@ -356,6 +391,16 @@ body::after {
     opacity: 1 !important;
     transform: none !important;
   }
+  .community-orbit-spin,
+  .community-orbit-counter {
+    animation: none !important;
+  }
+  .community-orbit-counter {
+    transform: none !important;
+  }
+  .community-partners-carousel-slide {
+    animation: none !important;
+  }
   .animate-fade-up,
   .animate-fade-in,
   .animate-float-slow,
@@ -366,6 +411,12 @@ body::after {
   }
   .glass-dark-tile:hover {
     transform: none;
+  }
+}
+
+@supports not (width: 1cqi) {
+  .community-orbit-size-fallback {
+    --orbit-r: clamp(8.5rem, 38vw, 15rem) !important;
   }
 }
 

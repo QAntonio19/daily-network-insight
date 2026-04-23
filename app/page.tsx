@@ -1,6 +1,7 @@
 import { HomeAboutUs } from "@/components/home/HomeAboutUs";
 import { HomeContentPillars } from "@/components/home/HomeContentPillars";
 import { HomeAmbassadors } from "@/components/home/HomeAmbassadors";
+import { HomeCommunityPartners } from "@/components/home/HomeCommunityPartners";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { HomeGallery } from "@/components/home/HomeGallery";
 import { HomeHero } from "@/components/home/HomeHero";
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HomeGallery />
       <HomeAboutUs />
       <HomeAmbassadors />
+      <HomeCommunityPartners />
       <HomeFaq />
     </>
   );
