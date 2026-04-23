@@ -21,16 +21,13 @@ const headerTextNavClass = [
   "rounded-full px-2.5 text-sm font-medium leading-none",
 ].join(" ");
 
-function headerMobileNavClass(options?: { centered?: boolean }) {
-  return [
-    "header-nav-pill header-nav-pill--stack",
-    "relative block w-full px-3 py-3 text-base font-medium",
-    options?.centered ? "text-center" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-}
+const mobileNavRowClass =
+  "flex w-full items-center justify-between px-1 py-4 text-base font-medium text-navy border-b border-stone-900/8 transition-colors hover:text-terracotta";
 
+const mobileSubRowClass =
+  "block w-full px-4 py-2.5 text-sm font-medium text-stone-500 hover:text-navy transition-colors";
+
+// kept for desktop dropdown use
 const headerSubMenuRowClass = [
   "header-nav-pill header-nav-pill--menu",
   "relative block w-full max-w-full whitespace-nowrap px-3 py-2 text-left text-sm font-medium w-max",
@@ -197,22 +194,45 @@ export function SiteHeader() {
       <div className="mx-auto max-w-6xl">
         <div className="flex items-center justify-between gap-3 px-4 py-3 sm:px-8 lg:hidden">
           {brandBlock}
+          {/* Single toggle button — animates hamburger ↔ X */}
           <button
             type="button"
-            className="inline-flex shrink-0 items-center justify-center rounded-full border border-stone-900/12 bg-white/75 p-2 text-navy shadow-sm backdrop-blur-sm transition-[background-color,border-color] duration-200 hover:bg-white"
             aria-expanded={open}
             aria-controls="mobile-nav"
+            aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
+            className={[
+              "relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full",
+              "transition-[background-color,border-color,box-shadow,color] duration-300 ease-in-out",
+              open
+                ? "bg-navy text-white shadow-md"
+                : "border border-stone-900/12 bg-white/75 text-navy shadow-sm backdrop-blur-sm hover:bg-white",
+            ].join(" ")}
           >
-            <span className="sr-only">Toggle menu</span>
-            <span className="flex flex-col gap-1.5">
-              <span
-                className={`block h-0.5 w-6 bg-navy transition ${open ? "translate-y-2 rotate-45" : ""}`}
-              />
-              <span className={`block h-0.5 w-6 bg-navy transition ${open ? "opacity-0" : ""}`} />
-              <span
-                className={`block h-0.5 w-6 bg-navy transition ${open ? "-translate-y-2 -rotate-45" : ""}`}
-              />
+            <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+            {/* Hamburger lines — fade+scale out when open */}
+            <span
+              className={[
+                "absolute flex flex-col gap-1.5 transition-[opacity,transform] duration-300",
+                open ? "scale-75 opacity-0" : "scale-100 opacity-100",
+              ].join(" ")}
+              aria-hidden
+            >
+              <span className="block h-0.5 w-5 rounded-full bg-current" />
+              <span className="block h-0.5 w-5 rounded-full bg-current" />
+              <span className="block h-0.5 w-5 rounded-full bg-current" />
+            </span>
+            {/* X icon — fade+scale in when open */}
+            <span
+              className={[
+                "absolute transition-[opacity,transform] duration-300",
+                open ? "scale-100 opacity-100" : "scale-75 opacity-0",
+              ].join(" ")}
+              aria-hidden
+            >
+              <svg viewBox="0 0 16 16" className="h-4 w-4" fill="none">
+                <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+              </svg>
             </span>
           </button>
         </div>
@@ -248,33 +268,34 @@ export function SiteHeader() {
         inert={!open ? true : undefined}
       >
         <div className="mobile-nav-grid__inner">
-          <div className="mobile-nav-drape px-5 pb-6 pt-2">
-            <nav className="flex flex-col gap-1" aria-label="Mobile primary">
-              {withoutContact.map((item) => {
-                if (item.href === "/") {
-                  return (
-                    <div key={item.href} className="mobile-nav-item">
+          <div className="mobile-nav-drape px-5 pb-8 pt-3">
+            <nav aria-label="Mobile primary">
+              {/* First item (Home) */}
+              <div className="mobile-nav-item border-b border-stone-900/8">
+                <Link
+                  href="/"
+                  onClick={() => setOpen(false)}
+                  className={mobileNavRowClass + " border-none"}
+                >
+                  Home
+                </Link>
+              </div>
+
+              {withoutContact.filter((item) => item.href !== "/").map((item) => (
+                <div key={item.href} className="mobile-nav-item">
+                  {item.children?.length ? (
+                    <div>
                       <Link
-                        href="/"
+                        href={item.href}
                         onClick={() => setOpen(false)}
-                        className={headerMobileNavClass({ centered: true })}
+                        className={mobileNavRowClass}
                       >
-                        Home
+                        <span>{item.label}</span>
+                        <svg className="h-4 w-4 shrink-0 opacity-40" viewBox="0 0 16 16" fill="none" aria-hidden>
+                          <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
                       </Link>
-                    </div>
-                  );
-                }
-                return (
-                  <div key={item.href} className="mobile-nav-item flex flex-col gap-0.5">
-                    {item.children?.length ? (
-                      <>
-                        <Link
-                          href={item.href}
-                          onClick={() => setOpen(false)}
-                          className={headerMobileNavClass()}
-                        >
-                          {item.label}
-                        </Link>
+                      <div className="pb-1">
                         {item.children.map((sub) => {
                           const isExternal = sub.href.startsWith("http");
                           return (
@@ -282,33 +303,40 @@ export function SiteHeader() {
                               key={sub.href}
                               href={sub.href}
                               onClick={() => setOpen(false)}
-                              className={`${headerSubMenuRowClass} pl-8 pr-3`}
+                              className={mobileSubRowClass}
                               {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                             >
                               {sub.label}
                             </Link>
                           );
                         })}
-                      </>
-                    ) : (
-                      <Link
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                        className={headerMobileNavClass()}
-                      >
-                        {item.label}
-                      </Link>
-                    )}
-                  </div>
-                );
-              })}
-              <div className="mobile-nav-item">
+                      </div>
+                    </div>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={mobileNavRowClass}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
+              ))}
+
+              {/* Contact pill */}
+              <div className="mobile-nav-item mt-5">
                 <Link
                   href="/contact"
                   onClick={() => setOpen(false)}
-                  className="btn-primary-shine mt-1 block rounded-xl border border-navy/20 bg-navy px-3 py-3 text-center text-base font-medium text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-[220ms] hover:bg-navy-soft hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]"
+                  className="btn-primary-shine inline-flex w-full items-center justify-center gap-2 rounded-full border border-navy/20 bg-navy px-5 py-3.5 text-base font-medium text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-[220ms] hover:bg-navy-soft hover:shadow-[0_12px_40px_rgba(0,0,0,0.22)]"
                 >
                   Contact
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-white/15">
+                    <svg viewBox="0 0 10 10" className="h-3 w-3" fill="none" aria-hidden>
+                      <path d="M2 8L8 2M8 2H3.5M8 2v4.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
                 </Link>
               </div>
             </nav>
