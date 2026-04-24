@@ -29,14 +29,7 @@ export const navItems: NavItem[] = [
       { label: "Timeline", href: "/insights/timeline" },
     ],
   },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Projects", href: "/projects" },
-    ],
-  },
-  { label: "Blog", href: "/blog" },
+  { label: "Services", href: "/services" },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
 ];
@@ -45,11 +38,11 @@ export const navItems: NavItem[] = [
 export const footerExploreGroups = [
   {
     label: "Site",
-    items: [navItems[0], navItems[1], navItems[2], navItems[6], navItems[7]],
+    items: [navItems[0], navItems[1], navItems[2], navItems[5], navItems[6]],
   },
   {
     label: "Content",
-    items: [navItems[3], navItems[5]],
+    items: [navItems[3]],
   },
   {
     label: "Services",
