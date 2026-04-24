@@ -65,7 +65,7 @@ export const achievementsGroups: AchievementGroup[] = [
       {
         id: "may-2024-ega",
         period: "May 2025",
-        title: "GeeGoals & EGA Credit Union collaboration",
+        title: "Eagle community credit union",
         imageSrc: "/images/photo_2026-04-20_00-56-15.jpg",
         imageAlt: "Collaboration event between GeeGoals and EGA Community Credit Union with over 15 vendors",
         paragraphs: [
@@ -90,14 +90,14 @@ export const achievementsGroups: AchievementGroup[] = [
         imageSrc: "/images/photo_2026-04-20_00-55-26.jpg",
         imageAlt: "Networking event with LeTip Anaheim members",
         paragraphs: [
-          "Reconnecting with LeTip Anaheim, Daily Network Insights continued to support the growth of a strong networking community — helping attract local businesses and build a more engaged and collaborative environment for professionals.",
+          "Reconnecting with LeTip Anaheim, Daily Network Insights continued to support the growth of a strong networking community helping attract local businesses and build a more engaged and collaborative environment for professionals.",
         ],
       },
       {
         id: "aug-2025-aabc",
         period: "August 2025",
         title: "Supporting the AABC Chamber",
-        imageSrc: "/images/photo_2026-04-20_01-03-15.jpg",
+        imageSrc: "/images/photo_2026-04-23_02-53-52 (2).jpg",
         imageAlt: "Daily Network Insights supporting the AABC Chamber community event",
         paragraphs: [
           "Daily Network Insights showed support for the AABC Chamber, contributing to efforts that promote and strengthen the local community of entrepreneurs. This moment reflects our commitment to supporting organizations that create opportunities for growth, collaboration, and business development.",
@@ -115,16 +115,6 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
-        id: "sep-2025-miracle-noodle",
-        period: "September 2025",
-        title: "Paramount Studios & Concern Foundation",
-        imageSrc: "/images/photo_2026-04-23_03-04-37.jpg",
-        imageAlt: "Community initiative at Paramount Studios in partnership with Miracle Noodle",
-        paragraphs: [
-          "Daily Network Insights partnered with Miracle Noodle to support a community initiative at Paramount Studios, helping raise awareness for children's cancer research through the Concern Foundation. This moment reflects our commitment to supporting meaningful causes while collaborating with brands that make a positive impact.",
-        ],
-      },
-      {
         id: "sep-2025-aabc-gala",
         period: "September 2025",
         title: "Sponsor of AABC Gala",
@@ -133,6 +123,16 @@ export const achievementsGroups: AchievementGroup[] = [
         paragraphs: [
           "Daily Network Insights proudly served as a sponsor for the Arab American Business Chamber (AABC) Gala, supporting an evening dedicated to celebrating entrepreneurship, cultural leadership, and business growth in the community. Our involvement helped bring together business owners, community leaders, and emerging professionals for a night of networking, recognition, and collaboration.",
           "This sponsorship reflects our ongoing commitment to empowering diverse business communities, building meaningful partnerships, and expanding opportunities for the next generation of entrepreneurs.",
+        ],
+      },
+      {
+        id: "sep-2025-infinity-bank",
+        period: "September 2025",
+        title: "Foster Love Gala with Infinity Bank",
+        imageSrc: "/images/photo_2026-04-23_12-09-33.jpg",
+        imageAlt: "Daily Network Insights at the Foster Love Gala in partnership with Infinity Bank",
+        paragraphs: [
+          "Daily Network Insights partnered with Infinity Bank to support the Foster Love Gala, contributing to an event focused on community impact and meaningful causes. This moment reflects our continued commitment to supporting initiatives that bring people together while aligning with organizations that create lasting value.",
         ],
       },
       {
@@ -147,13 +147,13 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
-        id: "nov-2025-expo-west",
-        period: "November 2025",
-        title: "Attending Expo West",
-        imageSrc: "/images/expanding-expo.png",
-        imageAlt: "Daily Network Insights at Expo West connecting with startups and industry leaders",
+        id: "oct-2025-food-collab",
+        period: "October 2025",
+        title: "First food industry collaboration",
+        imageSrc: "/images/photo_2026-04-20_01-02-44.jpg",
+        imageAlt: "Daily Network Insights partnering with a local food service business for an event",
         paragraphs: [
-          "Daily Network Insights attended Expo West, connecting with startups and industry leaders while expanding its presence within a broader business network. This moment reflects our focus on building relationships, capturing insight, and creating visibility through meaningful industry engagement.",
+          "Daily Network Insights partnered with a local food service business for its first collaboration in the industry, helping promote the event and bring strong visibility to the experience. This moment highlights our ability to support local brands by creating attention, engagement, and meaningful exposure within the community.",
         ],
       },
       {
@@ -165,6 +165,62 @@ export const achievementsGroups: AchievementGroup[] = [
         paragraphs: [
           "Daily Network Insights was invited to speak at The Restaurant Hub Synergy Exchange event hosted at Moc Kitchen Pho & Grill. This 2-hour networking event brought together local business owners focused on improving cash flow, customer relationships, and community impact.",
           "We shared our mission and highlighted opportunities for collaboration, mentorship, and supporting the next generation of entrepreneurs. Thank you to GeeGoals for the invitation and partnership in building meaningful business connections.",
+        ],
+      },
+      {
+        id: "nov-2025-service-member",
+        period: "November 2025",
+        title: "Supporting a service member event",
+        imageSrc: "/images/photo_2026-04-20_01-00-27.jpg",
+        imageAlt: "Daily Network Insights at a local service member event celebrating America's 250th birthday",
+        paragraphs: [
+          "Daily Network Insights supported a local service member event celebrating America's 250th birthday, honoring those who have served and continue to serve. This moment reflects our commitment to giving back, recognizing community leadership, and supporting events that bring people together in appreciation and respect.",
+        ],
+      },
+      {
+        id: "dec-2025-miracle-noodle",
+        period: "December 2025",
+        title: "Paramount Studios & Concern Foundation",
+        imageSrc: "/images/photo_2026-04-23_03-04-37.jpg",
+        imageAlt: "Community initiative at Paramount Studios in partnership with Miracle Noodle",
+        paragraphs: [
+          "Daily Network Insights partnered with Miracle Noodle to support a community initiative at Paramount Studios, helping raise awareness for children's cancer research through the Concern Foundation. This moment reflects our commitment to supporting meaningful causes while collaborating with brands that make a positive impact.",
+        ],
+      },
+      {
+        id: "dec-2025-oc-expo",
+        period: "December 2025",
+        title: "Booth sponsor at the OC Business Expo",
+        imageSrc: "/images/photo_2026-04-20_00-58-37.jpg",
+        imageAlt: "Daily Network Insights booth at the OC Business Expo",
+        paragraphs: [
+          "Daily Network Insights marked its first milestone as a booth sponsor at the OC Business Expo, engaging directly with the local community and businesses. This moment reflects the early growth of DNI, building visibility, strengthening connections, and establishing a presence within the local business ecosystem.",
+        ],
+      },
+    ],
+  },
+  {
+    year: "2026",
+    tagline: "Scaling the vision.",
+    items: [
+      {
+        id: "jan-2026-yacht",
+        period: "January 2026",
+        title: "Sponsor of chamber holiday party",
+        imageSrc: "/images/photo_2026-04-20_01-03-15.jpg",
+        imageAlt: "Daily Network Insights at a sponsor chamber holiday party of commerce",
+        paragraphs: [
+          "Daily Network Insights sponsored a holiday yacht event, bringing together local chambers of commerce and business leaders to celebrate the season and strengthen collaborative relationships. This event reflected our continued focus on creating meaningful partnerships and closing the year with connection, growth, and shared momentum into the new year.",
+        ],
+      },
+      {
+        id: "mar-2026-expo-west",
+        period: "March 2026",
+        title: "Attending Expo West",
+        imageSrc: "/images/expanding-expo.png",
+        imageAlt: "Daily Network Insights at Expo West connecting with startups and industry leaders",
+        paragraphs: [
+          "Daily Network Insights attended Expo West, connecting with startups and industry leaders while expanding its presence within a broader business network. This moment reflects our focus on building relationships, capturing insight, and creating visibility through meaningful industry engagement.",
         ],
       },
     ],

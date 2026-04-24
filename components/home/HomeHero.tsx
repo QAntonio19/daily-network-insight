@@ -19,11 +19,10 @@ export function HomeHero() {
             Premium media · Industry insight
           </p>
           <h1 className="animate-fade-up delay-100 mt-5 font-serif text-4xl leading-[1.08] text-navy sm:text-5xl lg:text-[3.25rem]">
-            Where media, insight, and influence come together
+            Where insight becomes influence
           </h1>
           <p className="animate-fade-up delay-200 mt-6 max-w-xl text-lg leading-relaxed text-stone-600">
-            We transform industry expertise into high-impact content and connect brands
-            with the right audience.
+            We turn real-world experience into high-impact content that builds visibility and credibility, connecting brands and ideas with the right audience.
           </p>
           <div className="animate-fade-up delay-300 mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <ButtonLink href="/insights">Explore Insights</ButtonLink>

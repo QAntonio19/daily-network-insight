@@ -16,7 +16,7 @@ const pillars = [
   },
   {
     title: "Podcast Conversations",
-    href: "/podcast",
+    href: "https://youtube.com/playlist?list=PLKb-3mW-AyZVjI6OrnhBw3ufiqBRRkYE4&si=jQO80Cec7YHoSnLU",
     description: "Leaders and operators in candid dialogue, tight edits, clear takeaways.",
   },
   {
