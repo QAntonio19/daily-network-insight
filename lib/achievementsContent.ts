@@ -13,7 +13,7 @@ export const achievementsGroups: AchievementGroup[] = [
         imageSrc: "/images/Screenshot 2026-04-23 120725.png",
         imageAlt: "Meeting with industry leaders including Daniel Lubetzky at a professional event",
         paragraphs: [
-          "This moment marked the beginning of the entrepreneurial journey — an early experience that sparked the vision behind Daily Network Insights. Through meaningful conversations and exposure to industry leaders like Daniel Lubetzky, it became clear how powerful ideas, connection, and insight can be in shaping new opportunities.",
+          "This moment marked the beginning of the entrepreneurial journey an early experience that sparked the vision behind Daily Network Insights. Through meaningful conversations and exposure to industry leaders like Daniel Lubetzky, it became clear how powerful ideas, connection, and insight can be in shaping new opportunities.",
         ],
       },
       {
@@ -33,7 +33,7 @@ export const achievementsGroups: AchievementGroup[] = [
         imageSrc: "/images/first-coe.jpg",
         imageAlt: "Daily Network Insights' first official collaboration with a local business at their event",
         paragraphs: [
-          "This marked Daily Network Insights' first official collaboration with a local business — supporting their event and helping bring visibility and energy to the experience. As a new name in the space, it was an opportunity to introduce DNI, build momentum, and begin establishing our presence within the community.",
+          "This marked Daily Network Insights' first official collaboration with a local business supporting their event and helping bring visibility and energy to the experience. As a new name in the space, it was an opportunity to introduce DNI, build momentum, and begin establishing our presence within the community.",
         ],
       },
     ],
@@ -84,8 +84,8 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
-        id: "jun-2025-letip",
-        period: "June 2025",
+        id: "jul-2025-letip",
+        period: "July 2025",
         title: "Reconnecting with LeTip Anaheim",
         imageSrc: "/images/photo_2026-04-20_00-55-26.jpg",
         imageAlt: "Networking event with LeTip Anaheim members",
