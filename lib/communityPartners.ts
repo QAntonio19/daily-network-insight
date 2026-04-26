@@ -32,15 +32,15 @@ export const communityPartnerLogos = [
     alt: "Arab American Business Chamber (AABC)",
   },
   {
-    src: "/images/octa-logo.png" as const,
-    alt: "Orange County Transportation Authority (OCTA)",
+    src: "/images/ACG-orange-C.png" as const,
+    alt: "ACG Orange County – Association for Corporate Growth",
   },
   {
     src: "/images/letip-logo.png" as const,
     alt: "LeTip Anaheim",
   },
   {
-    src: "/images/free-life.png" as const,
-    alt: "Free Life Community Church",
+    src: "/images/ACSCANCERNET.png" as const,
+    alt: "American Cancer Society Cancer Action Network",
   },
 ] as const;

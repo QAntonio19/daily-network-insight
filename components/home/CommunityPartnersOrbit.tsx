@@ -61,21 +61,27 @@ export function CommunityPartnersOrbit() {
         />
 
         <ul
-          className="community-orbit-spin absolute inset-0 m-0 list-none p-0"
+          className="absolute inset-0 m-0 list-none p-0"
           aria-label="Rotating community partner logos"
         >
           {communityPartnerLogos.map((item, i) => {
             const deg = -90 + (360 / N) * i;
+            // Negative delay offsets each card to its starting angle.
+            // Delay = -(i/N) * duration so card i begins at deg on the orbit.
+            const delayS = -((i / N) * 55).toFixed(3);
             return (
               <li
                 key={item.src}
-                className="absolute left-1/2 top-1/2 h-0 w-0"
+                className="community-orbit-card absolute left-1/2 top-1/2 h-0 w-0"
                 style={{
+                  // Fallback static position used when animation is disabled
+                  // (prefers-reduced-motion). The animation overrides this.
                   transform: `rotate(${deg}deg) translateY(calc(-1 * var(--orbit-r))) rotate(${-deg}deg)`,
+                  ['--orbit-card-delay' as string]: `${delayS}s`,
                 }}
               >
                 <div
-                  className="community-orbit-counter absolute aspect-square size-[7.75rem] shrink-0 -left-[3.875rem] -top-[3.875rem] sm:size-[8.5rem] sm:-left-[4.25rem] sm:-top-[4.25rem] md:size-[9.25rem] md:-left-[4.625rem] md:-top-[4.625rem]"
+                  className="absolute aspect-square size-[7.75rem] shrink-0 -left-[3.875rem] -top-[3.875rem] sm:size-[8.5rem] sm:-left-[4.25rem] sm:-top-[4.25rem] md:size-[9.25rem] md:-left-[4.625rem] md:-top-[4.625rem]"
                   title={item.alt}
                 >
                   <div

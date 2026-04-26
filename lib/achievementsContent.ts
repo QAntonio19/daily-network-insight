@@ -17,6 +17,16 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
+        id: "apr-2024-bmo",
+        period: "May 2024",
+        title: "Banking & community mixer with BMO",
+        imageSrc: "/images/photo_2026-04-23_03-02-27.jpg",
+        imageAlt: "Community business mixer in partnership with GeeGoals and BMO",
+        paragraphs: [
+          "This collaboration brought together the banking and consumer community through a local business mixer in partnership with GeeGoals and BMO. It marked another step in strengthening connections, supporting local initiatives, and creating spaces where professionals and organizations could engage, collaborate, and grow.",
+        ],
+      },
+      {
         id: "mar-2024-first-spark",
         period: "May 2024",
         title: "First sparks of innovation",
@@ -36,22 +46,22 @@ export const achievementsGroups: AchievementGroup[] = [
           "This marked Daily Network Insights' first official collaboration with a local business supporting their event and helping bring visibility and energy to the experience. As a new name in the space, it was an opportunity to introduce DNI, build momentum, and begin establishing our presence within the community.",
         ],
       },
+      {
+        id: "dec-2024-miracle-noodle",
+        period: "December 2024",
+        title: "Paramount Studios & Concern Foundation",
+        imageSrc: "/images/photo_2026-04-23_03-04-37.jpg",
+        imageAlt: "Community initiative at Paramount Studios in partnership with Miracle Noodle",
+        paragraphs: [
+          "Daily Network Insights partnered with Miracle Noodle to support a community initiative at Paramount Studios, helping raise awareness for children's cancer research through the Concern Foundation. This moment reflects our commitment to supporting meaningful causes while collaborating with brands that make a positive impact.",
+        ],
+      },
     ],
   },
   {
     year: "2025",
     tagline: "Implementation of the strategy.",
     items: [
-      {
-        id: "apr-2024-bmo",
-        period: "January 2025",
-        title: "Banking & community mixer with BMO",
-        imageSrc: "/images/photo_2026-04-23_03-02-27.jpg",
-        imageAlt: "Community business mixer in partnership with GeeGoals and BMO",
-        paragraphs: [
-          "This collaboration brought together the banking and consumer community through a local business mixer in partnership with GeeGoals and BMO. It marked another step in strengthening connections, supporting local initiatives, and creating spaces where professionals and organizations could engage, collaborate, and grow.",
-        ],
-      },
       {
         id: "apr-2024-letip",
         period: "April 2025",
@@ -177,26 +187,6 @@ export const achievementsGroups: AchievementGroup[] = [
           "Daily Network Insights supported a local service member event celebrating America's 250th birthday, honoring those who have served and continue to serve. This moment reflects our commitment to giving back, recognizing community leadership, and supporting events that bring people together in appreciation and respect.",
         ],
       },
-      {
-        id: "dec-2025-miracle-noodle",
-        period: "December 2025",
-        title: "Paramount Studios & Concern Foundation",
-        imageSrc: "/images/photo_2026-04-23_03-04-37.jpg",
-        imageAlt: "Community initiative at Paramount Studios in partnership with Miracle Noodle",
-        paragraphs: [
-          "Daily Network Insights partnered with Miracle Noodle to support a community initiative at Paramount Studios, helping raise awareness for children's cancer research through the Concern Foundation. This moment reflects our commitment to supporting meaningful causes while collaborating with brands that make a positive impact.",
-        ],
-      },
-      {
-        id: "dec-2025-oc-expo",
-        period: "December 2025",
-        title: "Booth sponsor at the OC Business Expo",
-        imageSrc: "/images/photo_2026-04-20_00-58-37.jpg",
-        imageAlt: "Daily Network Insights booth at the OC Business Expo",
-        paragraphs: [
-          "Daily Network Insights marked its first milestone as a booth sponsor at the OC Business Expo, engaging directly with the local community and businesses. This moment reflects the early growth of DNI, building visibility, strengthening connections, and establishing a presence within the local business ecosystem.",
-        ],
-      },
     ],
   },
   {
@@ -214,6 +204,16 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
+        id: "feb-2026-oc-expo",
+        period: "February 2026",
+        title: "Booth sponsor at the OC Business Expo",
+        imageSrc: "/images/photo_2026-04-20_00-58-37.jpg",
+        imageAlt: "Daily Network Insights booth at the OC Business Expo",
+        paragraphs: [
+          "Daily Network Insights marked its first milestone as a booth sponsor at the OC Business Expo, engaging directly with the local community and businesses. This moment reflects the early growth of DNI, building visibility, strengthening connections, and establishing a presence within the local business ecosystem.",
+        ],
+      },
+      {
         id: "mar-2026-expo-west",
         period: "March 2026",
         title: "Attending Expo West",
@@ -221,6 +221,16 @@ export const achievementsGroups: AchievementGroup[] = [
         imageAlt: "Daily Network Insights at Expo West connecting with startups and industry leaders",
         paragraphs: [
           "Daily Network Insights attended Expo West, connecting with startups and industry leaders while expanding its presence within a broader business network. This moment reflects our focus on building relationships, capturing insight, and creating visibility through meaningful industry engagement.",
+        ],
+      },
+      {
+        id: "apr-2026-aabc-mixer",
+        period: "April 2026",
+        title: "AABC Innovation Mixer",
+        imageSrc: "/images/dni-aabc-photo.png",
+        imageAlt: "Daily Network Insights at the AABC Innovation Mixer engaging with entrepreneurs and community leaders",
+        paragraphs: [
+          "Daily Network Insights participated in and spoke at the AABC Innovation Mixer, engaging with entrepreneurs, professionals, and community leaders in a space focused on collaboration and new ideas. This moment reflects our commitment to contributing to meaningful conversations and supporting environments where innovation and connection come together.",
         ],
       },
     ],

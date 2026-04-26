@@ -330,23 +330,23 @@ body::after {
 }
 
 /* Community partners — logos en órbita (contrarotación mantiene los hex derechos) */
-@keyframes community-orbit-spin {
+/*
+  Each satellite animates its OWN full orbit path with the counter-rotation
+  baked in, so there is never a sync issue between a parent spin and a child
+  counter-spin.  The start angle is controlled with a negative animation-delay
+  that is set as a CSS custom property per element.
+*/
+@keyframes community-orbit-card {
+  from {
+    transform: rotate(-90deg) translateY(calc(-1 * var(--orbit-r))) rotate(90deg);
+  }
   to {
-    transform: rotate(360deg);
+    transform: rotate(270deg) translateY(calc(-1 * var(--orbit-r))) rotate(-270deg);
   }
 }
-@keyframes community-orbit-counter {
-  to {
-    transform: rotate(-360deg);
-  }
-}
-.community-orbit-spin {
-  transform-origin: 50% 50%;
-  animation: community-orbit-spin 55s linear infinite;
-}
-.community-orbit-counter {
-  animation: community-orbit-counter 55s linear infinite;
-  transform-origin: 50% 50%;
+.community-orbit-card {
+  animation: community-orbit-card 55s linear infinite;
+  animation-delay: var(--orbit-card-delay, 0s);
 }
 
 /* Carrusel de citas: entrada lateral (como deslizamiento horizontal) */
@@ -486,12 +486,9 @@ body::after {
     opacity: 1 !important;
     transform: none !important;
   }
-  .community-orbit-spin,
-  .community-orbit-counter {
+  .community-orbit-card {
     animation: none !important;
-  }
-  .community-orbit-counter {
-    transform: none !important;
+    /* Static position comes from the inline transform (reduced-motion fallback) */
   }
   .community-partners-carousel-slide {
     animation: none !important;
