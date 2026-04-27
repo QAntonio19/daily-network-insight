@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     "Research informed perspectives: filter by category or explore the featured story and latest pieces from the editorial desk.",
 };
 
-export default function InsightsPage() {
-  const posts = readPosts();
+export default async function InsightsPage() {
+  const posts = await readPosts();
   return (
     <>
       <h1 className="sr-only">Insights</h1>

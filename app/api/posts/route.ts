@@ -3,7 +3,7 @@ import { readPosts, createPost } from "@/lib/postsStore";
 import type { InsightPost } from "@/lib/types";
 
 export async function GET() {
-  const posts = readPosts();
+  const posts = await readPosts();
   return NextResponse.json(posts);
 }
 
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const post = createPost(body);
+    const post = await createPost(body);
     return NextResponse.json(post, { status: 201 });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";

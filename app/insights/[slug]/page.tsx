@@ -13,12 +13,13 @@ interface PageProps {
 }
 
 export async function generateStaticParams() {
-  return getAllInsightSlugs().map((slug) => ({ slug }));
+  const slugs = await getAllInsightSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getInsightBySlug(slug);
+  const post = await getInsightBySlug(slug);
   if (!post) return { title: "Insight" };
   return {
     title: post.title,
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function InsightArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const post = getInsightBySlug(slug);
+  const post = await getInsightBySlug(slug);
   if (!post) notFound();
 
   return (

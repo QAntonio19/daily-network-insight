@@ -8,7 +8,7 @@ interface Params {
 
 export async function GET(_req: Request, { params }: Params) {
   const { slug } = await params;
-  const post = getPostBySlug(slug);
+  const post = await getPostBySlug(slug);
   if (!post) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(post);
 }
@@ -17,7 +17,7 @@ export async function PUT(request: Request, { params }: Params) {
   try {
     const { slug } = await params;
     const body = (await request.json()) as Partial<InsightPost>;
-    const updated = updatePost(slug, body);
+    const updated = await updatePost(slug, body);
     return NextResponse.json(updated);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
@@ -28,7 +28,7 @@ export async function PUT(request: Request, { params }: Params) {
 export async function DELETE(_req: Request, { params }: Params) {
   try {
     const { slug } = await params;
-    deletePost(slug);
+    await deletePost(slug);
     return NextResponse.json({ success: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
