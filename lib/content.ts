@@ -1,6 +1,5 @@
 import type {
   BenefitCard,
-  InsightPost,
   NavItem,
   ProjectCard,
   ServiceCard,
@@ -51,89 +50,13 @@ export const footerExploreGroups = [
 ] as const;
 
 export const insightCategories = [
-  "Leadership",
-  "Business",
-  "Education",
-  "Media",
-  "Community",
-  "Industry Trends",
+  "Our Story",
+  "Local Community Insights",
+  "Industry Insights",
+  "Economic Insights",
+  "Educational",
 ] as const;
 
-export const insightPosts: InsightPost[] = [
-  {
-    slug: "leading-with-clarity-in-volatile-markets",
-    title: "Leading with Clarity in Volatile Markets",
-    excerpt:
-      "How executives translate uncertainty into direction, and what teams need to hear when stakes are high.",
-    category: "Leadership",
-    date: "2026-03-12",
-    readTime: "8 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80",
-    imageAlt: "Leaders collaborating around a table in a modern office",
-    featured: true,
-  },
-  {
-    slug: "the-new-media-stack-for-credible-storytelling",
-    title: "The New Media Stack for Credible Storytelling",
-    excerpt:
-      "From editorial workflow to distribution, what premium media brands get right in 2026.",
-    category: "Media",
-    date: "2026-03-08",
-    readTime: "6 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Microphone and notebook on a desk",
-  },
-  {
-    slug: "cross-border-collaboration-that-actually-scales",
-    title: "Cross Border Collaboration That Actually Scales",
-    excerpt:
-      "Lessons from California and Mexico initiatives where trust, logistics, and narrative align.",
-    category: "Business",
-    date: "2026-02-26",
-    readTime: "7 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Handshake between professionals",
-  },
-  {
-    slug: "education-without-the-jargon",
-    title: "Education Without the Jargon",
-    excerpt:
-      "Translating complex industry knowledge into formats people can use, without diluting rigor.",
-    category: "Education",
-    date: "2026-02-18",
-    readTime: "5 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "People learning together in a bright space",
-  },
-  {
-    slug: "community-as-a-strategic-advantage",
-    title: "Community as a Strategic Advantage",
-    excerpt:
-      "Why the most durable brands invest in gatherings, mentorship, and shared learning.",
-    category: "Community",
-    date: "2026-02-02",
-    readTime: "6 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Community event with audience",
-  },
-  {
-    slug: "signals-from-the-field-what-leaders-are-watching",
-    title: "Signals from the Field: What Leaders Are Watching",
-    excerpt:
-      "A concise scan of trends shaping hiring, media, and partnership decisions this quarter.",
-    category: "Industry Trends",
-    date: "2026-01-21",
-    readTime: "9 min read",
-    imageSrc:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Analytics dashboard on a screen",
-  },
-];
 
 export const serviceCards: ServiceCard[] = [
   {

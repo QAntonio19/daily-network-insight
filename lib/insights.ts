@@ -1,10 +1,10 @@
-import { insightPosts } from "./content";
+import { readPosts, getPostBySlug as _getPostBySlug } from "./postsStore";
 import type { InsightPost } from "./types";
 
 export function getInsightBySlug(slug: string): InsightPost | undefined {
-  return insightPosts.find((p) => p.slug === slug);
+  return _getPostBySlug(slug);
 }
 
 export function getAllInsightSlugs(): string[] {
-  return insightPosts.map((p) => p.slug);
+  return readPosts().map((p) => p.slug);
 }

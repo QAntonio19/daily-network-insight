@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { EditorialInsightsSection } from "@/components/insights/EditorialInsightsSection";
+import { readPosts } from "@/lib/postsStore";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -8,10 +11,11 @@ export const metadata: Metadata = {
 };
 
 export default function InsightsPage() {
+  const posts = readPosts();
   return (
     <>
       <h1 className="sr-only">Insights</h1>
-      <EditorialInsightsSection />
+      <EditorialInsightsSection posts={posts} />
     </>
   );
 }

@@ -20,18 +20,18 @@ export interface EditorialIntroBlock {
 }
 
 export type InsightCategory =
-  | "Leadership"
-  | "Business"
-  | "Education"
-  | "Media"
-  | "Community"
-  | "Industry Trends";
+  | "Our Story"
+  | "Local Community Insights"
+  | "Industry Insights"
+  | "Economic Insights"
+  | "Educational";
 
 export interface InsightPost {
   slug: string;
   title: string;
   excerpt: string;
-  category: InsightCategory;
+  body?: string;
+  category: InsightCategory[];
   date: string;
   readTime: string;
   imageSrc: string;

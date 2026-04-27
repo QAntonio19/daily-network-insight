@@ -64,7 +64,7 @@ export const achievementsGroups: AchievementGroup[] = [
     items: [
       {
         id: "apr-2024-letip",
-        period: "April 2025",
+        period: "January 2025",
         title: "Partnership with LeTip Anaheim",
         imageSrc: "/images/photo_2026-04-23_02-58-22.jpg",
         imageAlt: "Networking event with LeTip Anaheim community members",
@@ -74,7 +74,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "may-2024-ega",
-        period: "May 2025",
+        period: "February 2025",
         title: "Eagle community credit union",
         imageSrc: "/images/photo_2026-04-20_00-56-15.jpg",
         imageAlt: "Collaboration event between GeeGoals and EGA Community Credit Union with over 15 vendors",
@@ -84,7 +84,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "jun-2025-irvine",
-        period: "June 2025",
+        period: "March 2025",
         title: "Speaking at the City of Irvine Economic Forum",
         imageSrc: "/images/photo_2026-04-23_03-00-28.jpg",
         imageAlt: "Speaker at the City of Irvine Economic Forum podium",
@@ -95,7 +95,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "jul-2025-letip",
-        period: "July 2025",
+        period: "April 2025",
         title: "Reconnecting with LeTip Anaheim",
         imageSrc: "/images/photo_2026-04-20_00-55-26.jpg",
         imageAlt: "Networking event with LeTip Anaheim members",
@@ -105,7 +105,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "aug-2025-aabc",
-        period: "August 2025",
+        period: "May 2025",
         title: "Supporting the AABC Chamber",
         imageSrc: "/images/photo_2026-04-23_02-53-52 (2).jpg",
         imageAlt: "Daily Network Insights supporting the AABC Chamber community event",
@@ -115,7 +115,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "aug-2025-yt-interview",
-        period: "August 2025",
+        period: "June 2025",
         title: "First YouTube interview",
         imageSrc: "/images/yt-interview.png",
         imageAlt: "First YouTube interview with a local business owner and entrepreneur",
@@ -126,7 +126,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "sep-2025-aabc-gala",
-        period: "September 2025",
+        period: "July 2025",
         title: "Sponsor of AABC Gala",
         imageSrc: "/images/AABC_Gala-39.jpg",
         imageAlt: "Group photo at the Arab American Business Chamber Gala",
@@ -137,7 +137,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "sep-2025-infinity-bank",
-        period: "September 2025",
+        period: "August 2025",
         title: "Foster Love Gala with Infinity Bank",
         imageSrc: "/images/photo_2026-04-23_12-09-33.jpg",
         imageAlt: "Daily Network Insights at the Foster Love Gala in partnership with Infinity Bank",
@@ -147,7 +147,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "oct-2025-newspaper",
-        period: "October 2025",
+        period: "September 2025",
         title: "Press release on newspaper",
         imageSrc: "/images/newspaper.png",
         imageAlt: "Team holding a newspaper featuring Daily Network Insights press release",
@@ -179,7 +179,7 @@ export const achievementsGroups: AchievementGroup[] = [
       },
       {
         id: "nov-2025-service-member",
-        period: "November 2025",
+        period: "December 2025",
         title: "Supporting a service member event",
         imageSrc: "/images/photo_2026-04-20_01-00-27.jpg",
         imageAlt: "Daily Network Insights at a local service member event celebrating America's 250th birthday",

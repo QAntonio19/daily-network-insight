@@ -5,137 +5,128 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { insightCategories, insightPosts } from "@/lib/content";
-import type { InsightCategory } from "@/lib/types";
+import { insightCategories } from "@/lib/content";
+import type { InsightCategory, InsightPost } from "@/lib/types";
 
 type FilterState = InsightCategory | "All";
 
-export function EditorialInsightsSection() {
+const EXCERPT_MAX = 110;
+
+function truncate(text: string, max: number) {
+  if (text.length <= max) return text;
+  return text.slice(0, max).trimEnd() + "…";
+}
+
+function InsightCard({ post }: { post: InsightPost }) {
+  return (
+    <Link
+      href={`/insights/${post.slug}`}
+      className="card-hover premium-surface group flex flex-col overflow-hidden rounded-2xl"
+      aria-label={post.title}
+    >
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <Image
+          src={post.imageSrc}
+          alt={post.imageAlt}
+          fill
+          className="object-cover transition duration-500 group-hover:scale-[1.04]"
+          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent opacity-0 transition duration-300 group-hover:opacity-100" />
+        {post.featured && (
+          <span className="absolute left-3 top-3 rounded-full bg-navy px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-[0.15em] text-white">
+            Featured
+          </span>
+        )}
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <h3 className="font-serif text-[1.05rem] font-semibold leading-snug text-navy transition duration-200 group-hover:opacity-70">
+          {post.title}
+        </h3>
+        <p className="mt-2 flex-1 text-xs leading-relaxed text-stone-500">
+          {truncate(post.excerpt, EXCERPT_MAX)}
+        </p>
+        <div className="mt-4 flex items-center justify-between border-t border-stone-100 pt-4">
+          <p className="text-[11px] text-stone-400">{post.date}</p>
+          <span className="flex items-center gap-1 text-[11px] font-medium text-stone-400">
+            {post.readTime}
+            <svg
+              width="10"
+              height="10"
+              viewBox="0 0 10 10"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M1 5h8M5 1l4 4-4 4" />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </Link>
+  );
+}
+
+export function EditorialInsightsSection({ posts }: { posts: InsightPost[] }) {
   const [active, setActive] = useState<FilterState>("All");
 
   const filtered = useMemo(() => {
-    if (active === "All") return insightPosts;
-    return insightPosts.filter((p) => p.category === active);
-  }, [active]);
-
-  const featured =
-    active === "All"
-      ? (insightPosts.find((p) => p.featured) ?? insightPosts[0])
-      : filtered[0];
-  const secondary = featured
-    ? filtered.filter((p) => p.slug !== featured.slug).slice(0, 3)
-    : [];
-
-  const featuredLabel =
-    active === "All" && featured?.featured
-      ? `Featured · ${featured.category}`
-      : featured
-        ? `${featured.category}`
-        : "";
+    if (active === "All") return posts;
+    return posts.filter((p) => p.category.includes(active));
+  }, [active, posts]);
 
   return (
-    <section
-      className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-16 sm:py-20"
-    >
-      <Container>
-        <SectionHeading
-          eyebrow="Insights"
-          title="Latest from the editorial desk"
-          description="Research informed perspectives, built for clarity, designed for busy readers."
-        />
+    <>
+      <section
+        className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-16 sm:py-20"
+        aria-label="Insights"
+      >
+        <Container>
+          <SectionHeading
+            eyebrow="Insights"
+            title="All The Tips In One Place"
+            description="Research-informed perspectives, built for clarity, designed for busy readers."
+          />
 
-        <div className="mt-8 flex flex-wrap gap-2">
-          <button
-            type="button"
-            onClick={() => setActive("All")}
-            className={`filter-pill ${active === "All" ? "filter-pill-active" : "filter-pill-idle"}`}
-          >
-            All
-          </button>
-          {insightCategories.map((c) => (
+          {/* Filter pills */}
+          <div className="mt-8 flex flex-wrap gap-2">
             <button
-              key={c}
               type="button"
-              onClick={() => setActive(c)}
-              className={`filter-pill ${active === c ? "filter-pill-active" : "filter-pill-idle"}`}
+              onClick={() => setActive("All")}
+              className={`filter-pill ${active === "All" ? "filter-pill-active" : "filter-pill-idle"}`}
             >
-              {c}
+              All
             </button>
-          ))}
-        </div>
-
-        {filtered.length === 0 ? (
-          <p className="mt-10 text-sm text-stone-600">
-            No insights in this category yet. Try another filter or view all.
-          </p>
-        ) : null}
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-2">
-          {featured ? (
-            <div className="editorial-frame min-h-0">
-              <Link
-                href={`/insights/${featured.slug}`}
-                className="editorial-frame__inner group block min-h-0"
+            {insightCategories.map((c) => (
+              <button
+                key={c}
+                type="button"
+                onClick={() => setActive(c)}
+                className={`filter-pill ${active === c ? "filter-pill-active" : "filter-pill-idle"}`}
               >
-                <div className="relative aspect-[16/11]">
-                  <Image
-                    src={featured.imageSrc}
-                    alt={featured.imageAlt}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.02]"
-                    sizes="(min-width: 1024px) 45vw, 100vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/15 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/85">
-                      {featuredLabel}
-                    </p>
-                    <h3 className="mt-2 font-serif text-3xl leading-tight text-white">
-                      {featured.title}
-                    </h3>
-                    <p className="mt-3 line-clamp-2 text-sm text-white/90">{featured.excerpt}</p>
-                    <p className="mt-4 text-xs text-white/75">
-                      {featured.date} · {featured.readTime}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ) : null}
-
-          <div className="grid gap-4">
-            {secondary.map((post) => (
-              <Link
-                key={post.slug}
-                href={`/insights/${post.slug}`}
-                className="card-hover premium-surface group grid grid-cols-[120px_1fr] gap-4 p-3"
-              >
-                <div className="relative h-24 overflow-hidden rounded-xl sm:h-28">
-                  <Image
-                    src={post.imageSrc}
-                    alt={post.imageAlt}
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                    sizes="120px"
-                  />
-                </div>
-                <div className="py-1">
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-terracotta">
-                    {post.category}
-                  </p>
-                  <h4 className="mt-1 font-serif text-lg leading-snug text-navy transition group-hover:text-terracotta">
-                    {post.title}
-                  </h4>
-                  <p className="mt-2 line-clamp-2 text-xs text-stone-600">{post.excerpt}</p>
-                  <p className="mt-3 text-[11px] text-stone-500">
-                    {post.date} · {post.readTime}
-                  </p>
-                </div>
-              </Link>
+                {c}
+              </button>
             ))}
           </div>
-        </div>
-      </Container>
-    </section>
+
+          {/* Cards grid */}
+          {filtered.length === 0 ? (
+            <p className="mt-10 text-sm text-stone-500">
+              No insights in this category yet. Try another filter.
+            </p>
+          ) : (
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {filtered.map((post) => (
+                <InsightCard key={post.slug} post={post} />
+              ))}
+            </div>
+          )}
+        </Container>
+      </section>
+    </>
   );
 }
