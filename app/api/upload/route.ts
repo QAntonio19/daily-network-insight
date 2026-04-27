@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { put } from "@vercel/blob";
+
+const useBlob = !!process.env.BLOB_READ_WRITE_TOKEN;
 
 export async function POST(request: Request) {
   try {
@@ -19,11 +20,26 @@ export async function POST(request: Request) {
     }
 
     const ext = file.name.split(".").pop() ?? "jpg";
-    const safeName = `daily-network-insights/images/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+    const safeName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
 
-    const { url } = await put(safeName, file, { access: "public" });
+    if (useBlob) {
+      const { put } = await import("@vercel/blob");
+      const { url } = await put(
+        `daily-network-insights/images/${safeName}`,
+        file,
+        { access: "public" },
+      );
+      return NextResponse.json({ src: url });
+    }
 
-    return NextResponse.json({ src: url });
+    /* Local fallback — save to /public/images/ */
+    const fs = await import("fs");
+    const path = await import("path");
+    const destDir = path.join(process.cwd(), "public", "images");
+    if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+    const buffer = Buffer.from(await file.arrayBuffer());
+    fs.writeFileSync(path.join(destDir, safeName), buffer);
+    return NextResponse.json({ src: `/images/${safeName}` });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
     return NextResponse.json({ error: message }, { status: 500 });

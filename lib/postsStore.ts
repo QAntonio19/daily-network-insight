@@ -1,21 +1,37 @@
-import { put, list } from "@vercel/blob";
 import type { InsightPost } from "./types";
 import initialPostsJson from "../data/posts.json";
 
-const POSTS_BLOB_PATH = "daily-network-insights/posts.json";
-
 const initialPosts = initialPostsJson as InsightPost[];
+const POSTS_BLOB_PATH = "daily-network-insights/posts.json";
+const useBlob = !!process.env.BLOB_READ_WRITE_TOKEN;
 
-async function getBlobUrl(): Promise<string | null> {
-  const { blobs } = await list({ prefix: POSTS_BLOB_PATH });
-  return blobs[0]?.url ?? null;
+/* ── Local (fs) helpers ────────────────────────────────────────────── */
+async function fsRead(): Promise<InsightPost[]> {
+  const fs = await import("fs");
+  const path = await import("path");
+  const filePath = path.join(process.cwd(), "data", "posts.json");
+  try {
+    const raw = fs.readFileSync(filePath, "utf-8");
+    return JSON.parse(raw) as InsightPost[];
+  } catch {
+    return initialPosts;
+  }
 }
 
-export async function readPosts(): Promise<InsightPost[]> {
+async function fsWrite(posts: InsightPost[]): Promise<void> {
+  const fs = await import("fs");
+  const path = await import("path");
+  const filePath = path.join(process.cwd(), "data", "posts.json");
+  fs.writeFileSync(filePath, JSON.stringify(posts, null, 2), "utf-8");
+}
+
+/* ── Vercel Blob helpers ───────────────────────────────────────────── */
+async function blobRead(): Promise<InsightPost[]> {
+  const { list } = await import("@vercel/blob");
   try {
-    const url = await getBlobUrl();
-    if (!url) return initialPosts;
-    const res = await fetch(url, { cache: "no-store" });
+    const { blobs } = await list({ prefix: POSTS_BLOB_PATH });
+    if (!blobs[0]?.url) return initialPosts;
+    const res = await fetch(blobs[0].url, { cache: "no-store" });
     if (!res.ok) return initialPosts;
     return (await res.json()) as InsightPost[];
   } catch {
@@ -23,12 +39,18 @@ export async function readPosts(): Promise<InsightPost[]> {
   }
 }
 
-async function writePosts(posts: InsightPost[]): Promise<void> {
+async function blobWrite(posts: InsightPost[]): Promise<void> {
+  const { put } = await import("@vercel/blob");
   await put(POSTS_BLOB_PATH, JSON.stringify(posts, null, 2), {
     access: "public",
     addRandomSuffix: false,
     contentType: "application/json",
   });
+}
+
+/* ── Public API ────────────────────────────────────────────────────── */
+export async function readPosts(): Promise<InsightPost[]> {
+  return useBlob ? blobRead() : fsRead();
 }
 
 export async function getPostBySlug(slug: string): Promise<InsightPost | undefined> {
@@ -42,7 +64,7 @@ export async function createPost(post: InsightPost): Promise<InsightPost> {
     throw new Error(`Slug "${post.slug}" already exists`);
   }
   posts.unshift(post);
-  await writePosts(posts);
+  await (useBlob ? blobWrite(posts) : fsWrite(posts));
   return post;
 }
 
@@ -51,11 +73,11 @@ export async function updatePost(slug: string, data: Partial<InsightPost>): Prom
   const index = posts.findIndex((p) => p.slug === slug);
   if (index === -1) throw new Error(`Post "${slug}" not found`);
   posts[index] = { ...posts[index], ...data };
-  await writePosts(posts);
+  await (useBlob ? blobWrite(posts) : fsWrite(posts));
   return posts[index];
 }
 
 export async function deletePost(slug: string): Promise<void> {
   const posts = await readPosts();
-  await writePosts(posts.filter((p) => p.slug !== slug));
+  await (useBlob ? blobWrite(posts.filter((p) => p.slug !== slug)) : fsWrite(posts.filter((p) => p.slug !== slug)));
 }
