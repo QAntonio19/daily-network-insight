@@ -7,8 +7,8 @@ export const achievementsGroups: AchievementGroup[] = [
     tagline: "Origin of the initiative",
     items: [
       {
-        id: "feb-2024-vision",
-        period: "February 2024",
+        id: "mar-2024-vision",
+        period: "March 2024",
         title: "The spark of a vision",
         imageSrc: "/images/Screenshot 2026-04-23 120725.png",
         imageAlt: "Meeting with industry leaders including Daniel Lubetzky at a professional event",
@@ -17,18 +17,8 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
-        id: "apr-2024-bmo",
-        period: "May 2024",
-        title: "Banking & community mixer with BMO",
-        imageSrc: "/images/photo_2026-04-23_03-02-27.jpg",
-        imageAlt: "Community business mixer in partnership with GeeGoals and BMO",
-        paragraphs: [
-          "This collaboration brought together the banking and consumer community through a local business mixer in partnership with GeeGoals and BMO. It marked another step in strengthening connections, supporting local initiatives, and creating spaces where professionals and organizations could engage, collaborate, and grow.",
-        ],
-      },
-      {
-        id: "mar-2024-first-spark",
-        period: "May 2024",
+        id: "apr-2024-first-spark",
+        period: "April 2024",
         title: "First sparks of innovation",
         imageSrc: "/images/first-spark.jpg",
         imageAlt: "Early professional gathering where the first ideas for Daily Network Insights took shape",
@@ -37,13 +27,23 @@ export const achievementsGroups: AchievementGroup[] = [
         ],
       },
       {
-        id: "mar-2024-first-coe",
+        id: "jul-2024-first-coe",
         period: "July 2024",
         title: "First official collaboration",
         imageSrc: "/images/first-coe.jpg",
         imageAlt: "Daily Network Insights' first official collaboration with a local business at their event",
         paragraphs: [
           "This marked Daily Network Insights' first official collaboration with a local business supporting their event and helping bring visibility and energy to the experience. As a new name in the space, it was an opportunity to introduce DNI, build momentum, and begin establishing our presence within the community.",
+        ],
+      },
+      {
+        id: "nov-2024-bmo",
+        period: "November 2024",
+        title: "Banking & community mixer with BMO",
+        imageSrc: "/images/photo_2026-04-23_03-02-27.jpg",
+        imageAlt: "Community business mixer in partnership with GeeGoals and BMO",
+        paragraphs: [
+          "This collaboration brought together the banking and consumer community through a local business mixer in partnership with GeeGoals and BMO. It marked another step in strengthening connections, supporting local initiatives, and creating spaces where professionals and organizations could engage, collaborate, and grow.",
         ],
       },
       {

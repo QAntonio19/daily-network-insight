@@ -9,11 +9,11 @@ export const siteConfig = {
   name: "Our Values",
   tagline:
     "Research based, industry informed insights, accessible, relevant, and consistent.",
-  email: "hello@dailynetworkinsights.com",
+  email: "info@dailynetworkinsights.com",
   social: {
-    linkedin: "https://www.linkedin.com",
+    linkedin: "https://www.linkedin.com/company/daily-network-insights/",
     x: "https://x.com",
-    youtube: "https://www.youtube.com",
+    youtube: "https://www.youtube.com/@DailyNetworkinsights",
   },
 } as const;
 
@@ -28,7 +28,13 @@ export const navItems: NavItem[] = [
       { label: "Timeline", href: "/insights/timeline" },
     ],
   },
-  { label: "Services", href: "/services" },
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Our Pricing", href: "/pricing" },
+    ],
+  },
   { label: "FAQ", href: "/#faq" },
   { label: "Contact", href: "/contact" },
 ];

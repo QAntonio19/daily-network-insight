@@ -301,6 +301,159 @@ body::after {
   animation-delay: 0.3s;
 }
 
+/* Gold shiny text animation — premium effect */
+:root {
+  --gold: #E8A95B;
+  --gold-highlight: #F0BB7A;
+  --gold-shadow: #DE9945;
+}
+
+@keyframes gold-shine {
+  0%, 25% {
+    background-position: -50rem 0;
+  }
+  100% {
+    background-position: 30rem 0;
+  }
+}
+
+@keyframes gold-flash {
+  0% { opacity: 1; }
+  10% { opacity: 0; }
+  30% { opacity: 0; }
+  40% { opacity: 1; }
+  50% { opacity: 0; }
+  90% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.gold-text {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background-color: var(--gold);
+  background-image: 
+    radial-gradient(
+      ellipse farthest-corner at right bottom,
+      white 0%,
+      var(--gold-highlight) 20%,
+      var(--gold) 60%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      white 0%,
+      var(--gold-highlight) 50%,
+      var(--gold-shadow) 75%,
+      var(--gold) 100%
+    );
+  background-size: 100% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background-image: linear-gradient(
+    100deg,
+    transparent 0%,
+    transparent 6rem,
+    white 11rem,
+    transparent 11.15rem,
+    transparent 15rem,
+    rgba(255,255,255,0.3) 20rem,
+    transparent 25rem,
+    transparent 27rem,
+    rgba(255,255,255,0.6) 32rem,
+    white 33rem,
+    rgba(255,255,255,0.3) 33.15rem,
+    transparent 38rem,
+    transparent 40rem,
+    rgba(255,255,255,0.3) 45rem,
+    transparent 50rem,
+    transparent 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-size: 60rem 100%;
+  background-repeat: no-repeat;
+  animation: gold-shine 4s linear infinite alternate;
+  animation-delay: 1.5s;
+}
+
+.gold-text::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  color: transparent;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.5) 0%,
+    transparent 35%,
+    transparent 75%,
+    var(--gold-shadow) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: gold-flash 4s linear infinite alternate;
+  animation-delay: 1.5s;
+}
+
+/* Gold gradient — simple version for dynamic elements */
+.gold-gradient {
+  color: transparent !important;
+  background: linear-gradient(
+    135deg,
+    #F0BB7A 0%,
+    #E8A95B 50%,
+    #DE9945 100%
+  ) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Gold color for icons and simple elements */
+.gold-color {
+  color: #E8A95B !important;
+}
+
+/* Gold border for buttons */
+.gold-border {
+  border-color: #E8A95B !important;
+  color: #E8A95B !important;
+  transition: all 0.3s ease;
+}
+
+.gold-border:hover {
+  border-color: #F0BB7A !important;
+  color: #F0BB7A !important;
+  box-shadow: 0 0 20px rgba(232, 169, 91, 0.3);
+}
+
+/* Gold icon box */
+.gold-icon-box {
+  border-color: rgba(232, 169, 91, 0.5) !important;
+  background-color: rgba(232, 169, 91, 0.05) !important;
+  color: #E8A95B !important;
+}
+
+.gold-icon-box:hover {
+  border-color: #E8A95B !important;
+  background-color: rgba(232, 169, 91, 0.1) !important;
+}
+
 /* Values scrolly — entrada según dirección del scroll */
 @keyframes values-wheel-fade-in-up {
   from {

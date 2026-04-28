@@ -40,7 +40,7 @@ export const valuesNarrativeSteps = [
     eyebrow: "Initiatives",
     title: "Featured projects & collaborations",
     body:
-      "From California to Mexico, we create platforms for industry insight, storytelling, and real-world connection. Through media, cross-border collaborations, and community events, we bring together professionals, brands, and ideas to share knowledge, increase visibility, and create meaningful opportunities.",
+      "Based in California, we create platforms that turn insight into visibility and real world opportunity. Through data-driven media, strategic storytelling, and curated collaborations, we connect professionals, brands, and ideas driving growth, building credibility, and creating meaningful impact.",
     mark: "⬡",
   },
 ] as const;

@@ -40,11 +40,11 @@ export const ambassadors: Ambassador[] = [
   {
     id: "yosmal-gutierrez",
     department: "Banking & Lending",
-    name: "Yosmal Gutierrez",
+    name: "Yosmel Gutierrez",
     email: "yosmel@geegoals.com",
     phone: "949 910 5559",
     imageSrc: "/images/image_2025-08-30_084133287.png",
-    imageAlt: "Yosmal Gutierrez, professional portrait",
+    imageAlt: "Yosmel Gutierrez, professional portrait",
     social: {
       instagram: "https://www.instagram.com",
       facebook: "https://www.facebook.com",
