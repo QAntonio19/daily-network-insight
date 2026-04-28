@@ -390,10 +390,10 @@ export default function ServicesPage() {
       {/* ── How We Drive Growth ──────────────────────────────────────────── */}
       <RevealOnScroll
         as="section"
-        id="how-we-work"
         className="border-t border-stone-200 bg-stone-50 py-20 sm:py-24"
       >
         <Container>
+          <div id="how-we-work"></div>
           <div className="text-center reveal-item">
             <h2 className="font-serif text-4xl font-bold text-navy sm:text-5xl">
               How We Drive Growth
