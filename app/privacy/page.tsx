@@ -43,10 +43,6 @@ export default function PrivacyPage() {
             <strong className="font-semibold text-navy">Contact.</strong> For privacy
             questions, email us through the contact page.
           </p>
-          <p className="border-t border-stone-900/10 pt-6 text-xs text-stone-500">
-            This summary is provided for transparency. Update dates and full legal text can
-            be expanded as your organization formalizes policies.
-          </p>
         </div>
       </Container>
     </>
