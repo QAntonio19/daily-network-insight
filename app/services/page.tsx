@@ -234,7 +234,7 @@ export default function ServicesPage() {
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-base leading-relaxed text-stone-400">
               We turn real-world experience into high-impact content
-              and strategic exposure—helping brands build credibility,
+              and strategic exposure helping brands build credibility,
               connect with the right audience, and create real opportunities.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
