@@ -280,53 +280,76 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Results Section ────────────────────────────────────────────────── */}
-      <RevealOnScroll as="section" className="border-t border-stone-200 bg-stone-50 py-20 sm:py-24">
-        <Container>
+      <RevealOnScroll as="section" className="relative border-t border-stone-200 bg-gradient-to-b from-stone-100 via-stone-50 to-white py-20 sm:py-24 overflow-hidden">
+        {/* Subtle background pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #000 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+        
+        <Container className="relative">
           <div className="text-center reveal-item mb-14">
-            <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl">
-              Real Results. Measurable Impact.
+            <h2 className="font-serif text-3xl font-bold text-navy sm:text-4xl lg:text-5xl">
+              Real Results. Measurable <span className="text-[#E8A95B]">Impact.</span>
             </h2>
-            <p className="mt-3 text-sm text-stone-500">
+            <p className="mt-3 text-base text-stone-500">
               30-day performance after implementing DNI strategy
             </p>
           </div>
 
           {/* Metrics Cards */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+          <div className="flex flex-wrap justify-center gap-4">
             {metrics.map((m, i) => (
               <div
                 key={m.label}
-                className="reveal-scale premium-surface p-6 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                className="reveal-scale flex flex-col overflow-hidden rounded-2xl border-2 border-[#E8A95B]/20 bg-white shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#E8A95B]/40 w-[calc(50%-8px)] md:w-[calc(33.333%-11px)] lg:w-[calc(20%-13px)]"
               >
-                <div className="gold-color flex h-10 w-10 mx-auto items-center justify-center mb-4 [&>svg]:h-8 [&>svg]:w-8">
-                  {m.icon}
+                {/* Header with icon and label */}
+                <div className="p-4 sm:p-6 pb-3 sm:pb-4 text-center flex-1 flex flex-col justify-center">
+                  <div className="gold-color flex h-10 w-10 sm:h-14 sm:w-14 mx-auto items-center justify-center mb-3 sm:mb-4 [&>svg]:h-8 [&>svg]:w-8 sm:[&>svg]:h-10 sm:[&>svg]:w-10">
+                    {m.icon}
+                  </div>
+                  <p className="text-sm sm:text-base font-semibold text-navy">{m.label}</p>
                 </div>
-                <p className="text-xs font-medium text-stone-500 mb-3">{m.label}</p>
-                <div className="flex items-center justify-center gap-2 mb-2">
-                  <span className="text-sm text-stone-400 tabular-nums">
-                    <AnimatedNumber value={m.before} duration={1200} />
-                  </span>
-                  <span className="text-stone-300">→</span>
-                  <span className="text-xl font-bold text-navy tabular-nums">
-                    <AnimatedNumber value={m.after} duration={1500} />
-                  </span>
+
+                {/* Before / After Section */}
+                <div className="px-3 sm:px-5 pb-3 sm:pb-5">
+                  <div className="flex justify-between items-end gap-2 sm:gap-3">
+                    <div className="text-center flex-1">
+                      <p className="text-[10px] sm:text-xs uppercase tracking-wider text-stone-400 mb-1">Before</p>
+                      <span className="text-base sm:text-lg font-bold text-stone-400 tabular-nums">
+                        <AnimatedNumber value={m.before} duration={1200} />
+                      </span>
+                    </div>
+                    <div className="text-center flex-1">
+                      <p className="text-[10px] sm:text-xs uppercase tracking-wider text-[#E8A95B] mb-1">After</p>
+                      <span className="text-xl sm:text-3xl font-bold text-navy tabular-nums">
+                        <AnimatedNumber value={m.after} duration={1500} />
+                      </span>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-lg font-bold gold-gradient tabular-nums">
-                  <AnimatedNumber value={m.change} duration={1800} />
-                </span>
+
+                {/* Growth bar - mt-auto ensures alignment at bottom */}
+                <div className="mt-auto bg-navy py-3 sm:py-4 px-3 sm:px-4">
+                  <div className="flex flex-col items-center justify-center">
+                    <span className="text-[10px] sm:text-xs font-medium text-white/70 uppercase tracking-wider">Growth</span>
+                    <div className="flex items-center gap-1 sm:gap-1.5 mt-0.5 sm:mt-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 sm:h-6 sm:w-6 text-[#E8A95B]">
+                        <path fillRule="evenodd" d="M10 17a.75.75 0 0 1-.75-.75V5.612L5.29 9.77a.75.75 0 0 1-1.08-1.04l5.25-5.5a.75.75 0 0 1 1.08 0l5.25 5.5a.75.75 0 1 1-1.08 1.04l-3.96-4.158V16.25A.75.75 0 0 1 10 17Z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-xl sm:text-2xl font-bold text-[#E8A95B] tabular-nums">
+                        <AnimatedNumber value={m.change} duration={1800} />
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
 
           {/* Quote */}
-          <div className="mt-14 max-w-2xl mx-auto text-center reveal-item">
-            <blockquote className="relative">
-              <span className="absolute -top-4 -left-2 text-5xl text-[#E8A95B]/30 font-serif">&ldquo;</span>
-              <p className="text-base leading-relaxed text-stone-600 italic">
-                DNI helped us build visibility, tell our story, and connect
-                with the right audience. The results speak for themselves.
-              </p>
-            </blockquote>
+          <div className="mt-16 reveal-item">
+            <p className="max-w-3xl mx-auto text-center text-lg leading-relaxed text-stone-600 italic">
+              &ldquo;DNI helped us build visibility, tell our story, and connect with the right audience. The results speak for themselves.&rdquo;
+            </p>
           </div>
         </Container>
       </RevealOnScroll>
