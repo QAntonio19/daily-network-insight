@@ -40,12 +40,18 @@ async function blobRead(): Promise<InsightPost[]> {
 }
 
 async function blobWrite(posts: InsightPost[]): Promise<void> {
-  const { put } = await import("@vercel/blob");
-  await put(POSTS_BLOB_PATH, JSON.stringify(posts, null, 2), {
-    access: "public",
-    addRandomSuffix: false,
-    contentType: "application/json",
-  });
+  try {
+    const { put } = await import("@vercel/blob");
+    await put(POSTS_BLOB_PATH, JSON.stringify(posts, null, 2), {
+      access: "public",
+      addRandomSuffix: false,
+      contentType: "application/json",
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "Unknown blob error";
+    console.error("[blobWrite] Failed to write to Vercel Blob:", message);
+    throw new Error(`Failed to save posts: ${message}`);
+  }
 }
 
 /* ── Public API ────────────────────────────────────────────────────── */
@@ -79,5 +85,10 @@ export async function updatePost(slug: string, data: Partial<InsightPost>): Prom
 
 export async function deletePost(slug: string): Promise<void> {
   const posts = await readPosts();
-  await (useBlob ? blobWrite(posts.filter((p) => p.slug !== slug)) : fsWrite(posts.filter((p) => p.slug !== slug)));
+  const exists = posts.some((p) => p.slug === slug);
+  if (!exists) {
+    throw new Error(`Post "${slug}" not found`);
+  }
+  const filtered = posts.filter((p) => p.slug !== slug);
+  await (useBlob ? blobWrite(filtered) : fsWrite(filtered));
 }

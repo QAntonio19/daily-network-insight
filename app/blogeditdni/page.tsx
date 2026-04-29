@@ -307,11 +307,13 @@ function DeleteConfirm({
   onConfirm,
   onCancel,
   deleting,
+  error,
 }: {
   title: string;
   onConfirm: () => void;
   onCancel: () => void;
   deleting: boolean;
+  error?: string;
 }) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -322,6 +324,11 @@ function DeleteConfirm({
           <span className="font-medium text-stone-700">"{title}"</span> will be permanently removed.
           This cannot be undone.
         </p>
+        {error && (
+          <div className="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2 text-sm text-red-600">
+            {error}
+          </div>
+        )}
         <div className="mt-6 flex justify-end gap-3">
           <button
             type="button"
@@ -521,16 +528,21 @@ export default function BlogEditPage() {
   }
 
   /* Delete */
+  const [deleteError, setDeleteError] = useState("");
   async function handleDelete() {
     if (!deleteTarget) return;
     setDeleting(true);
+    setDeleteError("");
     try {
       const res = await fetch(`/api/posts/${deleteTarget.slug}`, { method: "DELETE" });
-      if (!res.ok) throw new Error("Delete failed");
+      const json = await res.json();
+      if (!res.ok) {
+        throw new Error(json.error ?? `Delete failed (${res.status})`);
+      }
       setDeleteTarget(null);
       await fetchPosts();
-    } catch {
-      /* ignore */
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : "Delete failed");
     } finally {
       setDeleting(false);
     }
@@ -661,8 +673,9 @@ export default function BlogEditPage() {
         <DeleteConfirm
           title={deleteTarget.title}
           onConfirm={handleDelete}
-          onCancel={() => setDeleteTarget(null)}
+          onCancel={() => { setDeleteTarget(null); setDeleteError(""); }}
           deleting={deleting}
+          error={deleteError}
         />
       )}
     </div>

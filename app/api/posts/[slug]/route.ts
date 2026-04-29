@@ -21,7 +21,11 @@ export async function PUT(request: Request, { params }: Params) {
     return NextResponse.json(updated);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 400 });
+    const isNotFound = message.includes("not found");
+    return NextResponse.json(
+      { error: message },
+      { status: isNotFound ? 404 : 500 }
+    );
   }
 }
 
@@ -32,6 +36,11 @@ export async function DELETE(_req: Request, { params }: Params) {
     return NextResponse.json({ success: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Unknown error";
-    return NextResponse.json({ error: message }, { status: 400 });
+    const isNotFound = message.includes("not found");
+    console.error(`[DELETE /api/posts] Error:`, message);
+    return NextResponse.json(
+      { error: message },
+      { status: isNotFound ? 404 : 500 }
+    );
   }
 }
