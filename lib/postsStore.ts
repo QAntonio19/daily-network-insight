@@ -45,6 +45,7 @@ async function blobWrite(posts: InsightPost[]): Promise<void> {
     await put(POSTS_BLOB_PATH, JSON.stringify(posts, null, 2), {
       access: "public",
       addRandomSuffix: false,
+      allowOverwrite: true,
       contentType: "application/json",
     });
   } catch (err) {

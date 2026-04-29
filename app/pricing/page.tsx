@@ -88,7 +88,7 @@ const plans = [
       "Priority Support",
     ],
     cta: "Let's Talk",
-    ctaHref: "https://calendly.com/dailynetworkinsights/30min",
+    ctaHref: "https://calendly.com/dailynetworkinsights/30-min-meeting",
     ctaStyle: "enterprise",
     note: "Custom solutions for your goals",
   },
@@ -347,7 +347,7 @@ export default function PricingPage() {
 
             {/* Right: Button */}
             <a
-              href="https://calendly.com/dailynetworkinsights/30min"
+              href="https://calendly.com/dailynetworkinsights/30-min-meeting"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-white hover:text-black hover:border-white"

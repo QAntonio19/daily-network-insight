@@ -479,7 +479,7 @@ export default function ServicesPage() {
             {/* Center buttons */}
             <div className="flex flex-wrap gap-3 reveal-item">
               <a 
-href="https://calendly.com/dailynetworkinsights/30min"
+href="https://calendly.com/dailynetworkinsights/30-min-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium tracking-wide text-white transition-all hover:bg-white hover:text-black hover:border-white"
