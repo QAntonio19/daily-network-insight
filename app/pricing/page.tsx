@@ -24,6 +24,7 @@ const plans = [
       "Email Support",
     ],
     cta: "Get Started",
+    ctaHref: "https://www.paypal.com/ncp/payment/7EKQ3NN5RNMJ4",
     ctaStyle: "outline",
     note: "Cancel anytime",
   },
@@ -43,6 +44,7 @@ const plans = [
       "Email & Chat Support",
     ],
     cta: "Get Started",
+    ctaHref: "https://www.paypal.com/ncp/payment/DQ6JFVUG2H4JC",
     ctaStyle: "outline",
     note: "Cancel anytime",
     highlighted: true,
@@ -64,6 +66,7 @@ const plans = [
       "Priority Support",
     ],
     cta: "Get Started",
+    ctaHref: "https://www.paypal.com/ncp/payment/ACSBA9CU64MVG",
     ctaStyle: "outline",
     note: "Cancel anytime",
   },
@@ -73,7 +76,7 @@ const plans = [
     badgeColor: "text-[#E8A95B]",
     price: "Custom",
     period: "",
-    subPeriod: "$5K - $15K+ / month",
+    subPeriod: "$5K+ / month",
     description: "For companies, organizations, and large campaigns",
     features: [
       "Full Content & Media Strategy",
@@ -85,6 +88,7 @@ const plans = [
       "Priority Support",
     ],
     cta: "Let's Talk",
+    ctaHref: "https://calendly.com/dailynetworkinsights/30min",
     ctaStyle: "enterprise",
     note: "Custom solutions for your goals",
   },
@@ -153,21 +157,27 @@ export default function PricingPage() {
                 <div className="mt-6">
                   {plan.ctaStyle === "primary" ? (
                     <a
-                      href="/contact"
+                      href={plan.ctaHref}
+                      target={plan.ctaHref.startsWith("http") ? "_blank" : undefined}
+                      rel={plan.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="flex w-full items-center justify-center rounded-full bg-[#E8A95B] px-6 py-3 text-sm font-semibold text-black transition-all hover:bg-[#F0BB7A]"
                     >
                       {plan.cta}
                     </a>
                   ) : plan.ctaStyle === "enterprise" ? (
                     <a
-                      href="/contact"
+                      href={plan.ctaHref}
+                      target={plan.ctaHref.startsWith("http") ? "_blank" : undefined}
+                      rel={plan.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="btn-primary-shine flex w-full min-h-11 items-center justify-center rounded-full bg-navy px-6 py-3 text-sm font-semibold text-ivory shadow-[0_8px_32px_rgba(0,0,0,0.18)] transition-[background-color,box-shadow] duration-200 hover:bg-navy-soft"
                     >
                       {plan.cta}
                     </a>
                   ) : (
                     <a
-                      href="/contact"
+                      href={plan.ctaHref}
+                      target={plan.ctaHref.startsWith("http") ? "_blank" : undefined}
+                      rel={plan.ctaHref.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="flex w-full items-center justify-center rounded-full border-2 border-stone-900 px-6 py-3 text-sm font-semibold text-stone-900 transition-all hover:bg-stone-900 hover:text-white"
                     >
                       {plan.cta}
@@ -213,84 +223,106 @@ export default function PricingPage() {
       {/* ── Add-ons Section ─────────────────────────────────────────────── */}
       <RevealOnScroll as="section" className="bg-white py-16 sm:py-20 border-t border-stone-200">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-[280px_1fr] lg:items-start">
+          <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-12">
             {/* Left: Title */}
-            <div className="reveal-item">
+            <div className="reveal-item lg:w-[220px] shrink-0">
               <p className="text-xs font-semibold uppercase tracking-widest text-[#E8A95B]">
                 Add-ons
               </p>
               <h2 className="mt-2 font-serif text-3xl font-bold text-navy">
                 Enhance Your<br />Growth Plan
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-stone-500">
+              <p className="mt-4 text-sm leading-relaxed text-stone-500">
                 Customize your plan with additional services tailored to your goals.
               </p>
             </div>
 
-            {/* Right: Add-on cards */}
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            {/* Right: Add-on items with dividers */}
+            <div className="flex-1 flex flex-wrap lg:flex-nowrap">
               {[
                 { 
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
                     </svg>
                   ),
                   name: "Additional Feature / Interview", 
-                  price: "$250 – $500" 
+                  price: "$350",
+                  href: "https://www.paypal.com/ncp/payment/Q3D6PZQSXJ2YG"
                 },
                 { 
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                     </svg>
                   ),
                   name: "Event Coverage", 
-                  price: "$750 – $2,000" 
+                  price: "$1,200",
+                  href: "https://www.paypal.com/ncp/payment/YF6A4DH38QQTS"
                 },
                 { 
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10">
                       <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
                     </svg>
                   ),
                   name: "Video Production", 
-                  price: "$1,000+" 
+                  price: "$1,500",
+                  href: "https://www.paypal.com/ncp/payment/4NLYYU9ADND8Y"
                 },
                 { 
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
                     </svg>
                   ),
                   name: "Social Media Management", 
-                  price: "$500 – $1,200/mo" 
+                  price: "$850/mo",
+                  href: "https://www.paypal.com/ncp/payment/35RMK5LTGSWNS"
                 },
                 { 
                   icon: (
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-8 w-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-10 w-10">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                     </svg>
                   ),
                   name: "Strategy Session", 
-                  price: "$250" 
+                  price: "$250",
+                  href: "https://www.paypal.com/ncp/payment/W5N72YP8DDS6W"
                 },
-              ].map((addon) => (
-                <div key={addon.name} className="reveal-item flex flex-col items-center text-center p-4">
+              ].map((addon, index, arr) => (
+                <div 
+                  key={addon.name} 
+                  className={`reveal-item flex flex-col items-center text-center py-4 px-4 flex-1 min-w-[130px] ${
+                    index < arr.length - 1 ? 'lg:border-r lg:border-stone-200' : ''
+                  }`}
+                >
                   <div className="text-[#E8A95B] mb-3">
                     {addon.icon}
                   </div>
-                  <p className="text-sm font-semibold text-navy leading-tight">{addon.name}</p>
-                  <p className="mt-2 text-sm text-stone-500">{addon.price}</p>
+                  <p className="text-sm font-semibold text-navy leading-tight h-[48px] flex items-center justify-center text-center">{addon.name}</p>
+                  <div className="w-8 h-px bg-stone-300 my-3" />
+                  <p className="text-xl font-bold text-navy">{addon.price}</p>
+                  <a
+                    href={addon.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center justify-center rounded-full border border-[#E8A95B] px-4 py-1.5 text-xs font-medium text-[#E8A95B] transition-all hover:bg-[#E8A95B] hover:text-white"
+                  >
+                    Get Add-on
+                  </a>
                 </div>
               ))}
             </div>
           </div>
 
-          <p className="mt-8 text-center text-sm text-stone-400 reveal-item">
+          <div className="mt-10 flex items-center justify-center gap-2 text-sm text-stone-500 reveal-item">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5 text-[#E8A95B]">
+              <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clipRule="evenodd" />
+            </svg>
             Add-ons available for all plans. Packages can be customized based on your needs.
-          </p>
+          </div>
         </Container>
       </RevealOnScroll>
 

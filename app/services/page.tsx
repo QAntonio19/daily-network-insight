@@ -230,7 +230,7 @@ export default function ServicesPage() {
             </p>
             <h1 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
               Turn Visibility Into{" "}
-              <span className="gold-text" data-text="Measurable Growth.">Measurable Growth.</span>
+              <span className="gold-text" data-text="Measurable Growth">Measurable Growth</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-base leading-relaxed text-stone-400">
               We turn real-world experience into high-impact content
@@ -326,9 +326,6 @@ export default function ServicesPage() {
                 DNI helped us build visibility, tell our story, and connect
                 with the right audience. The results speak for themselves.
               </p>
-              <footer className="mt-4 text-sm font-semibold gold-gradient">
-                — Business Owner
-              </footer>
             </blockquote>
           </div>
         </Container>
@@ -459,13 +456,9 @@ export default function ServicesPage() {
             {/* Center buttons */}
             <div className="flex flex-wrap gap-3 reveal-item">
               <a 
-                href="/contact" 
-                className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#E8A95B] px-6 py-3 text-sm font-medium tracking-wide text-black hover:bg-[#F0BB7A] transition-all"
-              >
-                Get a Media Visibility Plan →
-              </a>
-              <a 
-                href="/contact" 
+href="https://calendly.com/dailynetworkinsights/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-sm font-medium tracking-wide text-white transition-all hover:bg-white hover:text-black hover:border-white"
               >
                 Schedule a Call →

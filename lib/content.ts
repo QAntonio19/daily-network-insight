@@ -12,7 +12,7 @@ export const siteConfig = {
   email: "info@dailynetworkinsights.com",
   social: {
     linkedin: "https://www.linkedin.com/company/daily-network-insights/",
-    x: "https://x.com",
+    instagram: "https://www.instagram.com/dailynetworkinsights/",
     youtube: "https://www.youtube.com/@DailyNetworkinsights",
   },
 } as const;

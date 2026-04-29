@@ -17,11 +17,12 @@ function truncate(text: string, max: number) {
   return text.slice(0, max).trimEnd() + "…";
 }
 
-function InsightCard({ post }: { post: InsightPost }) {
+function InsightCard({ post, index }: { post: InsightPost; index: number }) {
   return (
     <Link
       href={`/insights/${post.slug}`}
-      className="card-hover premium-surface group flex flex-col overflow-hidden rounded-2xl"
+      className="card-hover premium-surface group flex flex-col overflow-hidden rounded-2xl animate-fade-up"
+      style={{ animationDelay: `${0.1 + index * 0.08}s` }}
       aria-label={post.title}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -82,31 +83,33 @@ export function EditorialInsightsSection({ posts }: { posts: InsightPost[] }) {
   return (
     <>
       <section
-        className="reveal-on-scroll border-b border-stone-900/10 bg-transparent py-16 sm:py-20"
+        className="border-b border-stone-900/10 bg-transparent py-16 sm:py-20"
         aria-label="Insights"
       >
         <Container>
-          <SectionHeading
-            eyebrow="Insights"
-            title="All The Tips In One Place"
-            description="Research-informed perspectives, built for clarity, designed for busy readers."
-          />
+          <div className="animate-fade-up">
+            <SectionHeading
+              eyebrow="Insights"
+              title="All The Tips In One Place"
+              description="Research-informed perspectives, built for clarity, designed for busy readers."
+            />
+          </div>
 
           {/* Filter pills */}
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-8 flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: '0.15s' }}>
             <button
               type="button"
               onClick={() => setActive("All")}
-              className={`filter-pill ${active === "All" ? "filter-pill-active" : "filter-pill-idle"}`}
+              className={`filter-pill transition-all duration-200 ${active === "All" ? "filter-pill-active" : "filter-pill-idle"}`}
             >
               All
             </button>
-            {insightCategories.map((c) => (
+            {insightCategories.map((c, i) => (
               <button
                 key={c}
                 type="button"
                 onClick={() => setActive(c)}
-                className={`filter-pill ${active === c ? "filter-pill-active" : "filter-pill-idle"}`}
+                className={`filter-pill transition-all duration-200 ${active === c ? "filter-pill-active" : "filter-pill-idle"}`}
               >
                 {c}
               </button>
@@ -120,8 +123,8 @@ export function EditorialInsightsSection({ posts }: { posts: InsightPost[] }) {
             </p>
           ) : (
             <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((post) => (
-                <InsightCard key={post.slug} post={post} />
+              {filtered.map((post, i) => (
+                <InsightCard key={post.slug} post={post} index={i} />
               ))}
             </div>
           )}
