@@ -519,7 +519,12 @@ export default function BlogEditPage() {
       if (!res.ok) throw new Error(json.error ?? "Save failed");
       setPanelMode(null);
       setEditTarget(null);
-      await fetchPosts();
+      // Use posts from response to avoid CDN cache propagation delay
+      if (json.posts) {
+        setPosts(json.posts as InsightPost[]);
+      } else {
+        await fetchPosts();
+      }
     } catch (err) {
       setSaveError(err instanceof Error ? err.message : "Save failed");
     } finally {
@@ -540,7 +545,12 @@ export default function BlogEditPage() {
         throw new Error(json.error ?? `Delete failed (${res.status})`);
       }
       setDeleteTarget(null);
-      await fetchPosts();
+      // Use posts from response to avoid CDN cache propagation delay
+      if (json.posts) {
+        setPosts(json.posts as InsightPost[]);
+      } else {
+        await fetchPosts();
+      }
     } catch (err) {
       setDeleteError(err instanceof Error ? err.message : "Delete failed");
     } finally {
