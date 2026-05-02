@@ -51,4 +51,18 @@ export const ambassadors: Ambassador[] = [
       linkedin: "https://www.linkedin.com/in/yosmelg",
     },
   },
+  {
+    id: "andrew-cordero",
+    department: "Film & Media",
+    name: "Andrew Cordero",
+    email: "info@corderophotos.com",
+    phone: "714-696-1320",
+    imageSrc: "/images/cordero-ambassador.png",
+    imageAlt: "Andrew Cordero, professional portrait",
+    social: {
+      instagram: "https://www.instagram.com/corderophotos",
+      facebook: "https://www.facebook.com/corderophotos",
+      linkedin: "https://www.linkedin.com/in/andrew-cordero",
+    },
+  },
 ];

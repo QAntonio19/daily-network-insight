@@ -125,7 +125,7 @@ export function HomeAmbassadors() {
             {ambassadorsIntro.description}
           </p>
         </header>
-          <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10">
+          <div className="mt-14 grid gap-8 md:grid-cols-2 md:gap-10 [&>*:last-child:nth-child(odd)]:md:col-span-2 [&>*:last-child:nth-child(odd)]:md:mx-auto [&>*:last-child:nth-child(odd)]:md:w-1/2">
             {ambassadors.map((person) => (
               <div key={person.id} className="reveal-scale">
                 <AmbassadorCard person={person} />

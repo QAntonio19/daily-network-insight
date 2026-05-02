@@ -24,8 +24,8 @@ export const communityCenterLogo = {
 
 export const communityPartnerLogos = [
   {
-    src: "/images/mirable-noodle.png" as const,
-    alt: "Miracle Noodle",
+    src: "/images/lakeforest-logo.jpg" as const,
+    alt: "Lake Forest Chamber of Commerce",
   },
   {
     src: "/images/aabc-logo.png" as const,
@@ -36,8 +36,8 @@ export const communityPartnerLogos = [
     alt: "ACG Orange County – Association for Corporate Growth",
   },
   {
-    src: "/images/letip-logo.png" as const,
-    alt: "LeTip Anaheim",
+    src: "/images/blue-logo.jpg" as const,
+    alt: "Blue Logo",
   },
   {
     src: "/images/ACSCANCERNET.png" as const,

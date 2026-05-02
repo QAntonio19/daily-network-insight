@@ -13,7 +13,7 @@ const plans = [
     name: "Starter",
     badge: "Getting Started",
     badgeColor: "text-emerald-500",
-    price: "$300",
+    price: "$500",
     period: "/ month",
     description: "For individuals & small businesses getting started",
     features: [
@@ -32,7 +32,7 @@ const plans = [
     name: "Growth",
     badge: "Most Recommended",
     badgeColor: "text-sky-500",
-    price: "$900",
+    price: "$1,100",
     period: "/ month",
     description: "For brands ready to build consistency and credibility",
     features: [
@@ -53,7 +53,7 @@ const plans = [
     name: "Scale",
     badge: "High Growth",
     badgeColor: "text-purple-500",
-    price: "$2,500",
+    price: "$2,800",
     period: "/ month",
     description: "For businesses focused on serious growth",
     features: [
@@ -257,7 +257,7 @@ export default function PricingPage() {
                     </svg>
                   ),
                   name: "Event Coverage", 
-                  price: "$1,200",
+                  price: "$1,750",
                   href: "https://www.paypal.com/ncp/payment/YF6A4DH38QQTS"
                 },
                 { 
@@ -267,7 +267,8 @@ export default function PricingPage() {
                     </svg>
                   ),
                   name: "Video Production", 
-                  price: "$1,500",
+                  price: "$2,000",
+                  note: "2 hours minimum",
                   href: "https://www.paypal.com/ncp/payment/4NLYYU9ADND8Y"
                 },
                 { 
@@ -277,7 +278,7 @@ export default function PricingPage() {
                     </svg>
                   ),
                   name: "Social Media Management", 
-                  price: "$850/mo",
+                  price: "$900/mo",
                   href: "https://www.paypal.com/ncp/payment/35RMK5LTGSWNS"
                 },
                 { 
@@ -288,7 +289,7 @@ export default function PricingPage() {
                     </svg>
                   ),
                   name: "Strategy Session", 
-                  price: "$250",
+                  price: "$200",
                   href: "https://www.paypal.com/ncp/payment/W5N72YP8DDS6W"
                 },
               ].map((addon, index, arr) => (
@@ -304,6 +305,9 @@ export default function PricingPage() {
                   <p className="text-sm font-semibold text-navy leading-tight h-[48px] flex items-center justify-center text-center">{addon.name}</p>
                   <div className="w-8 h-px bg-stone-300 my-3" />
                   <p className="text-xl font-bold text-navy">{addon.price}</p>
+                  {"note" in addon && addon.note && (
+                    <p className="mt-1 text-[10px] font-medium uppercase tracking-wide text-stone-400">{addon.note as string}</p>
+                  )}
                   <a
                     href={addon.href}
                     target="_blank"
