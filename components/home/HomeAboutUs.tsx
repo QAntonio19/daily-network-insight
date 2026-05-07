@@ -12,9 +12,9 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 export function HomeAboutUs() {
   return (
     <section
-      id="about-us"
+      id="leadership"
       className="border-b border-stone-900/10 bg-transparent"
-      aria-label="About us"
+      aria-label="About"
     >
       <Container className="py-16 sm:py-20">
         <RevealOnScroll>

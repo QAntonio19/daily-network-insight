@@ -13,7 +13,7 @@ const SCROLLLINE_OFFSET = 96;
 function computeHomeNavKey(): HomeNavKey {
   if (typeof document === "undefined") return "top";
   const top = document.getElementById("top");
-  const about = document.getElementById("about-us");
+  const about = document.getElementById("leadership");
   if (!top) return "top";
   if (!about) return "top";
 
@@ -21,7 +21,7 @@ function computeHomeNavKey(): HomeNavKey {
   const aboutTop = about.getBoundingClientRect().top + window.scrollY;
   const aboutEnd = aboutTop + about.offsetHeight;
   if (y < aboutTop) return "top";
-  if (y < aboutEnd) return "about-us";
+  if (y < aboutEnd) return "leadership";
   return null;
 }
 

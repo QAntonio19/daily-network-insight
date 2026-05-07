@@ -8,13 +8,13 @@ import { useEffect } from "react";
 export function AboutToHomeHash() {
   useEffect(() => {
     window.location.replace(
-      `${window.location.origin}/#about-us`,
+      `${window.location.origin}/#leadership`,
     );
   }, []);
 
   return (
     <p className="mx-auto max-w-prose py-20 text-center text-sm text-stone-600">
-      Llevando a la sección About us en inicio…
+      Llevando a la sección About en inicio…
     </p>
   );
 }

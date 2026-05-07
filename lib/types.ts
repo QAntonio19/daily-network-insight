@@ -10,7 +10,7 @@ export interface NavItem {
 }
 
 /** Sección de home usada para el pill del header (scroll). */
-export type HomeNavKey = "top" | "about-us" | null;
+export type HomeNavKey = "top" | "leadership" | null;
 
 /** Three-line editorial block: small label, headline, body (reused e.g. on About). */
 export interface EditorialIntroBlock {

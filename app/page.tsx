@@ -1,6 +1,6 @@
 import { HomeAboutUs } from "@/components/home/HomeAboutUs";
 import { HomeContentPillars } from "@/components/home/HomeContentPillars";
-import { HomeAmbassadors } from "@/components/home/HomeAmbassadors";
+// import { HomeAmbassadors } from "@/components/home/HomeAmbassadors";
 import { HomeCommunityPartners } from "@/components/home/HomeCommunityPartners";
 import { HomeFaq } from "@/components/home/HomeFaq";
 import { HomeHero } from "@/components/home/HomeHero";
@@ -15,7 +15,7 @@ export default function HomePage() {
       <HomeContentPillars />
       <HomeValuesSection />
       <HomeAboutUs />
-      <HomeAmbassadors />
+      {/* <HomeAmbassadors /> */}
       <HomeCommunityPartners />
       <HomeFaq />
     </>

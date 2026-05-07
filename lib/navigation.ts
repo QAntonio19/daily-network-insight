@@ -20,12 +20,12 @@ export function isNavItemActive(
   const hash = pathname === "/" ? currentHash || w : currentHash;
 
   if (pathname === "/" && homeNavKey !== undefined) {
-    if (hash === "about-us" && homeNavKey === "top") {
+    if (hash === "leadership" && homeNavKey === "top") {
       if (item.href === "/") return false;
-      if (item.href === "/#about-us") return true;
+      if (item.href === "/#leadership") return true;
     }
     if (item.href === "/") return homeNavKey === "top";
-    if (item.href === "/#about-us") return homeNavKey === "about-us";
+    if (item.href === "/#leadership") return homeNavKey === "leadership";
   }
   if (item.href === "/") {
     if (pathname !== "/") return false;
