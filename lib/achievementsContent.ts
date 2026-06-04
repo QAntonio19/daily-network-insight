@@ -233,6 +233,16 @@ export const achievementsGroups: AchievementGroup[] = [
           "Daily Network Insights participated in and spoke at the AABC Innovation Mixer, engaging with entrepreneurs, professionals, and community leaders in a space focused on collaboration and new ideas. This moment reflects our commitment to contributing to meaningful conversations and supporting environments where innovation and connection come together.",
         ],
       },
+      {
+        id: "may-2026-vice-Interview",
+        period: "May 2026",
+        title: "Vice Mayor Of Irvine Interview  ",
+        imageSrc: "/images/photo_2026-05-31_08-59-44.jpg",
+        imageAlt: "Daily Network Insights had the opportunity to sit down with Irvine Vice Mayor James Mai for a meaningful conversation on leadership",
+        paragraphs: [
+          "Daily Network Insights had the opportunity to sit down with Irvine Vice Mayor James Mai for a meaningful conversation on leadership, economic growth, infrastructure, and community development. From his business background to helping lead one of America's safest cities, the discussion provided valuable insight into the vision shaping Irvine's future and the opportunities ahead for residents and businesses alike.",
+        ],
+      },
     ],
   },
 ];
