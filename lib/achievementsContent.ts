@@ -243,6 +243,16 @@ export const achievementsGroups: AchievementGroup[] = [
           "Daily Network Insights had the opportunity to sit down with Irvine Vice Mayor James Mai for a meaningful conversation on leadership, economic growth, infrastructure, and community development. From his business background to helping lead one of America's safest cities, the discussion provided valuable insight into the vision shaping Irvine's future and the opportunities ahead for residents and businesses alike.",
         ],
       },
+      {
+        id: "jun-2026-aabc-innovate-expo",
+        period: "June 2026",
+        title: "Strengthening Collaboration with the Arab American Business Chamber",
+        imageSrc: "/images/june-2026.jpeg",
+        imageAlt: "Daily Network Insights supporting the Arab American Business Chamber at the MO You Should Know OC Innovate Expo",
+        paragraphs: [
+          "Daily Network Insights proudly supported the Arab American Business Chamber at the MO You Should Know OC Innovate Expo, held at the Anaheim Marriott Suites. The event brought together entrepreneurs, innovators, and business professionals to foster collaboration, networking, and new opportunities across Orange County.",
+        ],
+      },
     ],
   },
 ];
