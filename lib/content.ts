@@ -17,41 +17,58 @@ export const siteConfig = {
   },
 } as const;
 
+const homeNav: NavItem = { label: "Home", href: "/" };
+const aboutNav: NavItem = { label: "About", href: "/#leadership" };
+/** Timeline cuelga de Values: Insights ya no está en el header. */
+const valuesNav: NavItem = {
+  label: "Values",
+  href: "/#values",
+  children: [
+    { label: "Timeline", href: "/insights/timeline" },
+  ],
+};
+/** Solo footer: Values sin submenú (ahí Timeline ya cuelga de Insights). */
+const valuesFooterNav: NavItem = { label: "Values", href: "/#values" };
+const servicesNav: NavItem = {
+  label: "Services",
+  href: "/services",
+  children: [
+    { label: "Our Pricing", href: "/pricing" },
+  ],
+};
+const faqNav: NavItem = { label: "FAQ", href: "/#faq" };
+const contactNav: NavItem = { label: "Contact", href: "/contact" };
+/** Solo footer: Insights sigue accesible aunque no aparezca en el header. */
+const insightsNav: NavItem = {
+  label: "Insights",
+  href: "/insights",
+  children: [
+    { label: "Timeline", href: "/insights/timeline" },
+  ],
+};
+
 export const navItems: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/#leadership" },
-  { label: "Values", href: "/#values" },
-  {
-    label: "Insights",
-    href: "/insights",
-    children: [
-      { label: "Timeline", href: "/insights/timeline" },
-    ],
-  },
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Our Pricing", href: "/pricing" },
-    ],
-  },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Contact", href: "/contact" },
+  homeNav,
+  aboutNav,
+  valuesNav,
+  servicesNav,
+  faqNav,
+  contactNav,
 ];
 
-/** Columnas del bloque “Explore” en el footer (referencias a `navItems`, sin duplicar URLs). */
+/** Columnas del bloque “Explore” en el footer (referencias a los items de nav, sin duplicar URLs). */
 export const footerExploreGroups = [
   {
     label: "Site",
-    items: [navItems[0], navItems[1], navItems[2], navItems[5], navItems[6]],
+    items: [homeNav, aboutNav, valuesFooterNav, faqNav, contactNav],
   },
   {
     label: "Content",
-    items: [navItems[3]],
+    items: [insightsNav],
   },
   {
     label: "Services",
-    items: [navItems[4]],
+    items: [servicesNav],
   },
 ] as const;
 
